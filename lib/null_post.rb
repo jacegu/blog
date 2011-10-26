@@ -7,4 +7,8 @@ class NullPost < Post
     @title, @description, @content = '', '', ''
     @publication_time = PUBLICATION_TIME
   end
+
+  def found?
+    false
+  end
 end

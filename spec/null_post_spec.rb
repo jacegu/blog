@@ -28,4 +28,8 @@ describe NullPost do
   it 'is never published' do
     null_post.should_not be_published
   end
+
+  it 'is never found' do
+    null_post.should_not be_found
+  end
 end
