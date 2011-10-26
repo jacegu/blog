@@ -13,4 +13,5 @@ group :testing do
   gem 'cucumber'
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'launchy'
 end
