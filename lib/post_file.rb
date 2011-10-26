@@ -12,7 +12,7 @@ class PostFile < Post
 
   def self.from(file)
     post_file = new(file)
-    if post_file.content_lines.empty?
+    if post_file.non_empty_lines.empty?
       return NullPost.new
     else
       return post_file
@@ -24,24 +24,23 @@ class PostFile < Post
   end
 
   def publication_time
-    DateTime.parse(content_lines[FIRST_LINE])
+    DateTime.parse(non_empty_lines[FIRST_LINE])
   end
 
   def title
-    content_lines[SECOND_LINE]
+    non_empty_lines[SECOND_LINE]
   end
 
   def description
-    content_lines[THIRD_LINE]
+    non_empty_lines[THIRD_LINE]
   end
 
   def content
-    content_lines[FOURTH_LINE..LAST_LINE].join("\n")
+    non_empty_lines[FOURTH_LINE..LAST_LINE].join("\n")
   end
 
-  def content_lines
+  def non_empty_lines
     lines = @source_file_content.split("\n")
-    lines_without_trail_spaces = lines.map{ |line| line.lstrip }.compact
-    lines_without_trail_spaces.select{ |l| not l.empty? }
+    lines.select{ |l| not l.lstrip.empty? }
   end
 end

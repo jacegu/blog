@@ -3,10 +3,7 @@ require 'post_file'
 
 describe PostFile do
   let(:publication_time){ DateTime.parse('2011-01-01 12:00:00+00:00') }
-  let(:the_file_content){ %{ #{publication_time}\n
-                             title\n
-                             \n description\n
-                             first content line\nsecond content line} }
+  let(:the_file_content){ "#{publication_time}\ntitle\n  \ndescription\nfirst content line\n  \nsecond content line" }
 
   before(:each) do
     the_file = stub(:file)
