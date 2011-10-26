@@ -1,9 +1,5 @@
-TEMPORAL_DIR = Dir.tmpdir
-
 Given /^a file with the content:$/ do |content|
-  file_name = 'cucumber_post.post'
-  @file_path = File.join(TEMPORAL_DIR, file_name)
-  File.open(@file_path, 'w+'){ |f| f.puts content }
+  create_post_file_with(content)
 end
 
 When /^a post is created from that file$/ do

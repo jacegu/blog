@@ -25,7 +25,7 @@ Feature: The post file format
   also be short, usually up to 160 characters. You can not use markup in the
   post description.
 
-  The rest of the file will be taken as the post content. You can use markup
+  The rest of the file will be taken as the post content. You can use HAML
   in it and make it as long as you want it to be.
 
   Scenario: A correctly formatted post
