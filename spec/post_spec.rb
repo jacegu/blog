@@ -130,4 +130,10 @@ describe Post do
       first_post.should be > second_post
     end
   end
+
+  describe '#found?' do
+    it 'is always found (true)' do
+      a_post_entitled('title').should be_found
+    end
+  end
 end

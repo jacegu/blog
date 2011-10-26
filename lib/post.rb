@@ -27,6 +27,10 @@ class Post
     publication_time.past?
   end
 
+  def found?
+    true
+  end
+
   def ==(other)
     title == other.title and
       description == other.description and
