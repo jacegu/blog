@@ -11,14 +11,14 @@
       This is where Javier Acero records what he learns about software
       development and where he reflects about his long road.
     %language en-US
-    %lastBuildDate #{@posts[0].publication_time.to_rfc822}
+    %lastBuildDate #{@blog.published_posts[0].publication_time.to_rfc822}
     %webMaster j4cegu@gmail.com (Javier Acero)
     %managingEditor j4cegu@gmail.com (Javier Acero)
 
-    -@posts.each do |post|
+    -@blog.each_published_post do |post|
       %item
         %title #{post.title}
-        %link  url_for(post)
+        %link  #{url_for(post)}
         %description #{post.description}
         %author j4cegu@gmail.com (Javier Acero)
         %pubDate #{post.publication_time.to_rfc822}
