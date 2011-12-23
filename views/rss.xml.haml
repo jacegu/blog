@@ -1,0 +1,30 @@
+!!! XML
+%rss(version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:atom="http://www.w3.org/2005/Atom")
+
+  %channel
+    %title Javier Acero's blog
+    %link #{url('/blog/rss')}
+    %atom:link(href="#{url('/blog/rss')}" rel="self" type="application/rss+xml")
+    %description
+      This is where Javier Acero records what he learns about software
+      development and where he reflects about his long road.
+    %language en-US
+    %lastBuildDate #{@posts[0].publication_time.to_rfc822}
+    %webMaster j4cegu@gmail.com (Javier Acero)
+    %managingEditor j4cegu@gmail.com (Javier Acero)
+
+    -@posts.each do |post|
+      %item
+        %title #{post.title}
+        %link  url_for(post)
+        %description #{post.description}
+        %author j4cegu@gmail.com (Javier Acero)
+        %pubDate #{post.publication_time.to_rfc822}
+        %guid(isPermaLink='true') #{url('/blog/'+ post.url)}
+        %comments #{url('/blog/' + post.url + '#disqus_thread')}
+        %content:encoded
+          <![CDATA[
+          =haml post.content
+          ]]>
