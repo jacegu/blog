@@ -10,6 +10,17 @@ configure do
   set :haml, { :format => :html5 }
 end
 
+helpers do
+  def formatted_post_date_for(post)
+    date = post.publication_time
+    "#{Date::ABBR_MONTHNAMES[date.month]} #{date.day} · #{date.year}".downcase
+  end
+
+  def url_for(post)
+    url("/blog/#{post.url}")
+  end
+end
+
 before do
   @blog = Blog.new
 end
