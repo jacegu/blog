@@ -1,0 +1,15 @@
+!!! XML
+%urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+
+  %url
+    %loc #{url('/')}blog
+    %lastmod #{@blog.published_posts[0].publication_time}
+    %changefreq daily
+    %priority 0.9
+
+  -@blog.each_published_post do |post|
+    %url
+      %loc #{url_for(post)}
+      %lastmod #{post.publication_time}
+      %changefreq monthly
+      %priority 0.5

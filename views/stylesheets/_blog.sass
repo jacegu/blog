@@ -1,13 +1,18 @@
-$white:   #efefef
+$white:       #efefef
 
-$black:   #646464
-$blacker: #343434
+$white:       #fdfdfd
+$grey:        #808080
+$light_grey:  #e0e0e0
+$black:       #3c3c3c
+$blackr:      #2c2c2c
+$blacker:     #0c0c0c
+$red:         #e80015
 
-$grey:    #a4a4a4
+$blue:        #32a5f5
+$blueer:      #2247ff
 
-$green:   #88960d
-$red:     #d00000
-$yellow:  #d09100
+$background: #fbfbfb
+
 
 @mixin no-borders
   border: 0
@@ -30,50 +35,49 @@ $yellow:  #d09100
   -moz-text-shadow:    $top $right $blur $color
   text-shadow:         $top $right $blur $color
 
-@mixin transtion-of($property)
+@mixin transition-of($property)
   -webkit-transition-property: $property
   -moz-transition-property:    $property
   transition-property:         $property
 
-@mixin transtion-duration($seconds)
+@mixin transition-duration($seconds)
   -webkit-transition-duration: $seconds
   -moz-transition-duration:    $seconds
   transition-duration:         $seconds
 
 body
+  min-width: 940px
+  padding-left: 20px
+  padding-bottom: 80px
   margin: 0
-  padding: 0
-  color: $blacker
-  background: white
-  font: normal 300 100% apolline
-
-h1, h2, h3, h4, h5, h6
-  color: $blacker
-  font: normal normal 100% fertigo-pro
-  margin-bottom: 20px
+  color: $black
+  background: $background url('/images/bgpattern.png') top left repeat
+  font: normal normal 19px/1.47 apolline
+  text-align: left
 
 h1
-  font-size: 180%
+  font: 700 normal 34px/0.824 angie-sans
+  margin: 0.988em 0 0.658em
+  color: $blackr
 h2
-  font-size: 160%
+  font: normal normal 24px/1.16 angie-sans
+  margin: 1.740em 0 0.582em
 h3
-  font-size: 140%
+  font: bold normal 18px/1.55 angie-sans
+  margin: 2.325em 0 0.775em
 h4
-  font-size: 130%
-h5
-  font-size: 120%
-h6
-  font-size: 110%
+  font: normal normal 18px/1.55 angie-sans
+  margin: 2.325em 0 0.775em
+  text-transform: uppercase
 
 p
-  margin-bottom: 20px
-  font: normal 300 1.2em/1.6em apolline
+  max-width: 33em
+  margin: 0 0 1.47em
 
-ul, ol
-  padding-left: 40px
-  font: normal 300 1.2em/1.6em apolline
-  p
-    font-size: 100%
+ul, ol, dl
+  max-width: 31em
+  margin: 0 0 1.4em
+  padding-left: 1.47em
 
 ul
   list-style-type: circle
@@ -81,8 +85,12 @@ ul
 ol
   list-style-type: decimal
 
-li
-  padding-left: 10px
+dl
+  padding-left: 0
+dt
+  font-weight: bold
+dd
+  margin-left: 1.47em
 
 em
   font-style: italic
@@ -91,138 +99,193 @@ strong
   font-weight: 600
 
 code
-  position: relative
-  top: -1px
-  padding: 1px 4px
-  border: 1px solid $black
-  background: #ebeeeb
-  font: 300 normal .9em 'courier new'
-  @include rounded-borders(3px)
+  margin: 0 .2em 1.73em
+  color: $blacker
+  font: 300 normal .85em/1.73 monaco, courier
+  word-spacing: -0.2em
 
-a, a:link, a:active, a:visited
-  color: $red
-  text-decoration: none
-  &:hover
-    color: lighten($red, 10%)
-    @include transtion-of(color)
-    @include transtion-duration(1s)
+pre
+  color: $black
 
 blockquote
-  margin: 0 0 20px 20px
-  padding-left: 20px
-  border-left: 1px solid grey
-  font: italic 400 1.2em/1.6em apolline
+  max-width: 33em
+  margin: 0 0 1.4em 0em
+  padding: 2px 0 2px .7em
+  color: $grey
+  border-left: 6px solid $light_grey
+  font-size: .9em
 
-header
-  padding: 0px 0 40px
-  border-top: 5px solid $blacker
+cite
+  display: block
+  text-align: right
+  color: $grey
+  font-size: .9em
+  &:before
+    content: "- "
 
-#logo
-  margin-top: 0
-  width: 100px
-  height: 40px
-  padding: 100px 0 40px
-
-  color: $white
-  background: $blacker
-
-  font: normal normal 3.6em/25px fertigo-pro
-  text-align: center
-  @include text-shadow(2px, 3px, 5px, black)
-
-  -webkit-border-bottom-left-radius: 8px
-  -moz-border-bottom-left-radius:    8px
-  border-bottom-left-radius:         8px
-  -webkit-border-bottom-right-radius: 8px
-  -moz-border-bottom-right-radius:    8px
-  border-bottom-right-radius:         8px
-
-  @include transtion-duration(2s)
-  -webkit-transition-property: color, background, text-shadow
-  -moz-transition-property:    color, background, text-shadow
-  transition-property:         color, background, text-shadow
-
+a, a:link, a:active
+  color: $blue
+  text-decoration: none
+  &:visited
+    color: darken($blue, 10%)
   &:hover
-    color: white
-    @include text-shadow(2px, 3px, 5px, black)
+    text-decoration: underline
 
+#header
+  margin: 0 0 60px
 
-nav#menu
-  height: 100px
+#box
+  float: left
+  width: 55px
+  height: 128px
+  margin-right: 20px
+  background: $blackr
 
+#fullname
+  margin: 20px
+  color: $blackr
+  font: normal normal 1.15em/1 fertigo-pro
+
+#facets
   ul
+    max-width: 700px
+    margin-top: 20px
     padding: 0
-    font: normal normal 1.2em fertigo-pro
+    list-style: none
+    font: normal normal .9em/1.45 angie-sans
+    li
+      display: inline-block
+      margin-right: 12px
+      cursor: default
+      .symbol
+        color: $black
+        font: normal 1em normal tahoma
+        &.heart:hover
+          color: red
+          @include transition-of(color)
+          @include transition-duration(10s)
 
-  li
-    padding: 5px 0 6px
-
-  a, a:link, a:active, a:visited
-    color: $grey
-    @include transtion-duration(.8s)
-    -webkit-transition-property: color
-    -moz-transition-property:    color
-    transition-property:         color
-
-    &:hover
-      color: $blacker
-
-    &.current
-      color: $blacker
-
-    &#rss
-      display: none
+  #quote
+    height: 70px
+    cursor: default
+    .quote
+      padding: 0
+      border: 0
+      margin: 0
+      font: italic 300 .94em/1.36 apolline
+      opacity: 0
+    #quotation-by
       position: relative
-      top: -1px
-      left: 5px
-      width: 26px
-      height: 26px
-      background: $grey url('/images/rss.png') top left no-repeat
+      left: -40px
+      margin-top: 0
+      opacity: 0
 
-      @include transtion-duration(.8s)
-      -webkit-transition-property: background-color
-      -moz-transition-property:    background-color
-      transition-property:         background-color
+#social-links
+  display: none
+  ul
+    list-style: none
+    li
+      margin: 0 0 0 10px
 
+#menu
+  margin-bottom: 80px
+  #links
+    ul
+      padding: 0
+      font: normal normal .9em/1.7 angie-sans
+    a, a:link, a:active, a:visited
+      color: $blue
+      @include transition-duration(.35s)
       &:hover
-        background-color: #fb9d00
+        color: $black
+        text-decoration: none
+      &.active
+        color: $black
+      &.active:hover
+        color: $blacker
 
-#section-description
-  height: 100px
-  font: normal normal 1.8em apolline
-  margin-bottom: 40px
+  #description
+    max-width: 24em
+    font: normal normal 1.4em/1.47 apolline
+    p
+      margin-bottom: 0
+    #blog, #reading, #about
+      display: none
 
 #main
-  margin: 20px auto 80px
+  padding: 0
+  margin: 0
+
+h1#title
+  margin-top: 0
+  margin-bottom: 0.824em
+
+article
+  margin: 0
+  padding: 0
+
+#post
+  clear: both
+  .date
+    position: relative
+    left: -8px
+    text-align: right
+    font-size: .9em
 
 #post-list
   .date
-    margin-right: 20px
-    padding-top: 25px
-  .post
-    margin-bottom: 10px
-  .read
-    display: inline-block
     position: relative
-    top: 42px
-    left: 8px
-    padding: 6px 10px
+    left: -8px
+    padding-top: 41px
+    font-size: .9em
     text-align: right
-    color: $white !important
-    background: $blacker
-    @include rounded-borders(8px)
-    font: normal normal .95em fertigo-pro
-    &.hot
-      background: $red
-    &.mild
-      background: $yellow
-    &.cold
-      background: $blacker
+  .post
+    .title
+      a, a:link, a:active, a:visited
+        color: $black
+    .description
+      max-width: 100%
+      margin: 0
 
-.date
-  padding-top: 34px
-  text-align:  right
-  font: normal normal 1.2em apolline
+.gist
+  width: 41em
+  margin: 0 0 1.47em 0
+  font: 300 normal .82em monaco, courier !important
+  .gist-file
+    .gist-data.gist-syntax
+      background-color: $white
+  .gist-meta
+    font-size: 75% !important
+    a, a:link, a:visited, a:active
+      color: $blue !important
 
-  .full-date
-    margin-right: 20px
+.vimeo
+  margin: 0 auto 1.47em
+  width: 32em
+  height: 24em
+  border: 2px solid $blacker
+  @include rounded-borders(4px)
+
+.do_not_center
+  margin-left: 0
+  margin-right: 0
+
+.vanish
+  @include transition-of(opacity)
+  @include transition-duration(.15s)
+  opacity: 0 !important
+
+.appear
+  @include transition-of(opacity)
+  @include transition-duration(1.2s)
+  opacity: 1 !important
+
+.available-soon
+  opacity: .8
+  &:after
+    position: relative
+    top: -2px
+    margin-left: 10px
+    content: 'soon'
+    font: italic normal .8em/1 apolline
+    color: red

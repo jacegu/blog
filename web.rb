@@ -33,11 +33,6 @@ get '/blog' do
   haml :blog
 end
 
-get '/blog/rss' do
-  @posts = @blog.published_posts
-  haml :'rss.xml', :layout => false
-end
-
 get '/blog/:post_url' do
   @post = @blog.published_post_with_url(params[:post_url])
   if @post.found?
@@ -58,6 +53,15 @@ end
 
 get '/stylesheets/:name.css' do
   sass :"stylesheets/#{params[:name]}"
+end
+
+get '/blog/rss' do
+  @posts = @blog.published_posts
+  haml :'rss.xml', :layout => false
+end
+
+get '/sitemap.xml' do
+  haml :'sitemap.xml', :layout => false
 end
 
 not_found do

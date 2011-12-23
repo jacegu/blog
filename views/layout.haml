@@ -12,8 +12,8 @@
 
   %title
     = @title
-  %meta(name="description" content="")
-  %meta(name="author" content="")
+  %meta(name="author" content="Javier Acero")
+  %meta(name="description" content="#{@description}")
 
   -# Mobile viewport optimized: j.mp/bplateviewport
   %meta(name="viewport" content="width=device-width, initial-scale=1")
@@ -21,36 +21,76 @@
   -# CSS: implied media="all"
   %link(rel="stylesheet" href="/stylesheets/style.css")
 
+  %link(href="#{url('/blog/rss')}" rel="alternate" type="application/rss+xml")
+
   -# All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects
   %script(type="text/javascript" src="/javascripts/libs/modernizr-2.0.6.min.js")
 
-  = haml :'_typekit'
+  -# Typekit fonts required before rendering body
+  =haml :'_typekit'
 
 %body
-  %header
-    .container_12
-      %a#logo.grid_2{href: '#'} J
+  %header#header.container_12.do_not_center
+    %section#logo.grid_3
+      #box &nbsp;
+      #fullname
+        %span.name    Javier
+        %span.surname Acero
 
-  %section#location.container_12.clearfix
-    %nav#menu.grid_2.clearfix
+    %section#facets
+      %ul.grid_9
+        %li.craftsman     software craftsman
+        %li.kindred       kindred spirit
+        %li.perfectionist perfectionist
+        %li.minimalist    minimalist
+        %li.fanboy
+          %span.symbol &#63743;
+          fanboy
+        %li.lover
+          %span.symbol.heart &hearts;
+          coffee & beer
+
+      %section#quote.grid_9
+        %blockquote.quote  Speak, friend and enter
+        %cite#quotation-by Gandalf
+
+    %section#social-links
+      %ul
+        %li
+          %a{href: 'http://twitter.com/jacegu', title: 'follow me on twitter'}
+            twitter
+        %li
+          %a{href: 'http://github.com/jacegu', title: 'check my code on githug'}
+            github
+        %li
+          %a{href: 'mailto:j4cegu@gmail.com', title: 'send my an email'}
+            email
+
+  %nav#menu.container_12.do_not_center
+    %section#links.grid_3
       %ul.clearfix
         %li
-          %a.current{href: url('/blog')} Blog
-          %a#rss.ir{href: url('/blog/rss')} RSS
+          %a#blog{href: url('/blog')} Blog
         %li
-          %a{href: url('/reading-list')} Reading List
+          %a#rss{href: url('/blog/rss')} Suscribe via RSS
         %li
-          %a{href: url('/about')} About
-    #section-description.grid_9
-      .p
-        = @description
-  %section#main.container_12.clearfix(role="main")
+          %span#reading.available-soon Reading List
+        %li
+          %span#about.available-soon About
+
+    %section#description.grid_9
+      %p#current #{@description}
+
+  %section#main.container_12.do_not_center{role: 'main'}
     = yield
 
   %footer
 
   -# JavaScript at the bottom for fast page loading
   = haml :'_javascripts'
+
+  %script(type="text/javascript")
+    $(document).ready(function(){ $('#all').fadeIn(2000); });
 
   -# Google analytics snippet
   = haml :'_analytics'
