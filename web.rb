@@ -41,6 +41,7 @@ end
 get '/blog/:post_url' do
   @post = @blog.published_post_with_url(params[:post_url])
   if @post.found?
+    cache_it_for A_MONTH
     haml :post
   else
     not_found
@@ -52,7 +53,7 @@ get '/reading' do
 end
 
 get '/about' do
-  haml :reading
+  haml :about
 end
 
 get '/stylesheets/:name.css' do
@@ -61,4 +62,10 @@ end
 
 not_found do
   '404'
+end
+
+A_MONTH =  60 * 60 * 24 * 30
+
+def cache_it_for(time)
+  cache_control :public, max_age: time
 end
