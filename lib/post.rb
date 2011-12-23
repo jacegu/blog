@@ -1,13 +1,8 @@
-require 'date'
-
-class DateTime
-  def past?
-    self < DateTime.now
-  end
-end
+require 'publication_time'
 
 class Post
   include Comparable
+
   attr_reader :title, :description, :content, :publication_time
 
   def initialize(title, description, content, publication_time)
