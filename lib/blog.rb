@@ -14,7 +14,7 @@ class Blog
   end
 
   def posts
-    @post_dir.posts
+    @post_dir.posts.sort
   end
 
   def published_posts
