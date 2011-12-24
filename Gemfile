@@ -9,7 +9,7 @@ group :development do
   gem 'heroku'
 end
 
-group :testing do
+group :test do
   gem 'rspec'
   gem 'cucumber'
   gem 'capybara'
