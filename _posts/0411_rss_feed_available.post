@@ -1,0 +1,68 @@
+2011-04-27 09:00+02:00
+
+RSS feed available
+
+The RSS feed is now available. Check out what I researched about the RSS specfication and how I have developed the feed using HAML and Sinatra.
+
+%p
+  As you might have noticed the RSS feed has been available since a few hours ago. You can access to it from the URL
+  %a{href: 'http://javieracero.com/blog/rss'} http://javieracero.com/blog/rss
+  and soon enough there will be a link on the sidebar.
+
+%p
+  I was expecting many of you to ask for RSS feed feature soon. That's why It was the next backlog story I was going to work on. The plan was to have it ready by the end of the week but I have rushed things up. Thanks to
+  %a{href: 'http://haml-lang.com'} HAML
+  it was ready in a few minutes.<!--more-->
+
+%h2 Developing the RSS feed
+
+%h3 Specification
+%p
+  I had never developed an RSS feed before so
+  %strong most of the work was learning about the specification.
+  It turns out that there are a few alternatives regarding feeds. You have to choose between Atom and a few versions of RSS: 0.91, 0.92, 1.0 and  2.0 (or just put them all). It may be trickier than you think since there are incompatiblity issues between versions.
+
+%p
+  I have followed the
+  %a{href: 'http://cyber.law.harvard.edu/rss/rss.html'} RSS 2.0 specfication.
+  In the future I might add an Atom feed just to learn about the differences between it and RSS.
+
+%h3 Generating the XML
+%p
+  %strong An RSS feed is just a plain XML file.
+  Given that the blog engine makes an extensive use of HAML I had the prefect tool for the job.
+
+%p
+  I decided to treat the XML file as a regular view althougt I could have generated it from code. Just feels easier to maintain this way. It's like the about page, with the difference of generating XML instead of HTML.
+
+%p
+  Once the view was created I
+  %strong added the route mapping
+  to my
+  %code Sinatra::Application
+  class which I have called
+  %code MyBlog::Engine
+  and provide the required data to the view before rendering it.
+
+%p
+  In this case I just had to pull the
+  %code @posts = @repository.published
+  statement to a
+  %code before
+  filter mapped to the route
+  %code /blog*
+  and job done.
+
+%h3 The result
+%p The HAML file is just what you see in this Gist:
+%script(src="https://gist.github.com/943156.js")
+
+%p Of course there is room for improvement. But it's just good enough right now.
+
+%h3 Validation
+%p
+  Finally I validated the feed using the
+  %a{href: 'http://validator.w3.org/feed/'} W3C feed validation service.
+  I had to fix a typo and adequate the dates to the RFC822 format.
+
+%p Piece of cake :·)
