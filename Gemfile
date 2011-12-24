@@ -6,6 +6,7 @@ gem 'sass'
 
 group :development do
   gem 'shotgun'
+  gem 'heroku'
 end
 
 group :testing do
