@@ -39,6 +39,12 @@ $blueer:      #2247ff
   -moz-transition-duration:    $seconds
   transition-duration:         $seconds
 
+@mixin transition-delay($seconds)
+  -webkit-transition-delay: $seconds
+  -moz-transition-delay:    $seconds
+  transition-delay:         $seconds
+
+
 body
   min-width: 940px
   padding-left: 20px
@@ -141,7 +147,13 @@ a, a:link, a:active
   width: 55px
   height: 128px
   margin-right: 20px
-  background: $blackr
+  background: $blackr url('/images/avatarbw.png') -100% -100% no-repeat
+  cursor: help
+  &:hover
+    @include transition-of(background)
+    @include transition-duration(5s)
+    @include transition-delay(5s)
+    background: $blackr url('/images/avatarbw.png') 60% 35% no-repeat
 
 #fullname
   margin: 20px 20px 10px
@@ -193,8 +205,10 @@ a, a:link, a:active
         font: normal 1em normal tahoma
         &.heart:hover
           color: red
+          cursor: help
           @include transition-of(color)
-          @include transition-duration(10s)
+          @include transition-delay(5s)
+          @include transition-duration(5s)
 
   #quote
     height: 70px
