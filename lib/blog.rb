@@ -18,7 +18,7 @@ class Blog
   end
 
   def published_posts
-    posts.select{ |p| p.published? }.sort
+    posts.select{ |p| p.published? }
   end
 
   def each_published_post

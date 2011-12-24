@@ -31,7 +31,8 @@ describe Blog do
     before do
       published1.stub(:<=>).with(published2).and_return(1)
       published2.stub(:<=>).with(published1).and_return(-1)
-      post_dir.stub(:posts).and_return([unpublished, published2, published1])
+      unpublished.stub(:<=>).and_return(0)
+      post_dir.stub_chain(:posts).and_return([unpublished, published2, published1])
     end
 
     describe '#posts' do
