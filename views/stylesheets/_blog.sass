@@ -134,7 +134,7 @@ a, a:link, a:active
     text-decoration: underline
 
 #header
-  margin: 0 0 60px
+  margin: 0 0 40px
 
 #box
   float: left
@@ -144,9 +144,38 @@ a, a:link, a:active
   background: $blackr
 
 #fullname
-  margin: 20px
+  margin: 20px 20px 10px
   color: $blackr
   font: normal normal 1.18em/1 fertigo-pro
+
+#social-links
+  float: left
+
+  ul
+    padding: 0
+    list-style: none
+    li
+      font: normal normal .9em/1.6 angie-sans
+      a, a:link, a:active, a:visited
+        color: $blue
+        @include transition-duration(.35s)
+        img
+          position: relative
+          margin-right: 6px
+          opacity: .75
+          &.twitter
+            top: -2px
+          &.github
+            top: -1px
+          &.linkedin
+            top: -3px
+        &:hover
+          color: $black
+          text-decoration: none
+          img
+            opacity: 1
+            @include transition-of(opacity)
+            @include transition-duration(.35s)
 
 #facets
   ul
@@ -182,13 +211,6 @@ a, a:link, a:active
       margin-top: 0
       opacity: 0
 
-#social-links
-  display: none
-  ul
-    list-style: none
-    li
-      margin: 0 0 0 10px
-
 #menu
   margin-bottom: 80px
   #links
@@ -201,10 +223,6 @@ a, a:link, a:active
       &:hover
         color: $black
         text-decoration: none
-      &.active
-        color: $black
-      &.active:hover
-        color: $blacker
 
   #description
     max-width: 24em
