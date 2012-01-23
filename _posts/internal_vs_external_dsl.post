@@ -1,0 +1,55 @@
+2012-01-23 23:30:00+02:00
+
+Internal vs. External DSL
+
+Lately I've been struggling with one of my apprentice tasks because I only knew about Internal DSLs. It turns out that there is another kind: external DSLs
+
+%p
+  For those of you who have never heard about it, DSL stands for
+  <em>Domain Specific Language</em>. Basically it's <strong>a language
+  which is built for a specific domain</strong> (hence the name). They
+  are pretty common in the computer world, and you may be using
+  a few without even knowing it.
+
+%blockquote
+  Domain-specific language: a computer programming language
+  of limited expressiveness focused on a particular domain.
+
+%p
+  %a{href: 'http://rspec.info/', alt: 'RSpec site'} RSpec
+  or
+  %a{href: 'http://rake.rubyforge.org/', alt: 'Rake on Ruby Forge'} Rake
+  are clear examples of DSLs. They use all the power of the Ruby language
+  to make you feel like using a language that was designed with a particular
+  problem in mind.
+
+%p
+  This kind of DSL that bends and twists a host language to make it
+  feel like a different one is known as <strong>Internal
+  DSL</strong> and is the only kind of DSL I was aware of.
+
+%p
+  My current apprentice task involves building a DSL that is 100% in
+  Spanish. Ruby is so flexible that you can do such a thing. But I also
+  have very strong syntax constraints. That's why I
+  have been struggling for a long time trying to build it an
+  <em>Internal DSL</em> to solve this particular problem.
+
+%p
+  Today (after my mentor asked me to write this post) I have learned
+  that <strong>there is another type of Domain-specific Languages: the external ones</strong>.
+
+%p
+  It turns out that Cucumber is an external DSL. But also CSS, Sass and many
+  other technologies that I would have never considered a Domain Specific Language,
+  are such a thing.
+
+%p
+  <em>External DSLs</em> have their own syntax instead of being built on the top
+  of a language. All you need to make it work is a parser that interprets the language
+  or that translates it to another one.
+
+%p
+  %a{href: 'http://martinfowler.com/bliki/DomainSpecificLanguage.html', alt: 'A post by Martin Fowler about the different kinds of DSLs'} This post
+  by Martin Fowler has been really helpful to understand the whole thing. Now I
+  know how to complete my task.
