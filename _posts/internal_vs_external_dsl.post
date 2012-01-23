@@ -45,7 +45,7 @@ Lately I've been struggling with one of my apprentice tasks because I only knew 
   are such a thing.
 
 %p
-  <em>External DSLs</em> have their own syntax instead of being built on the top
+  <em>External DSLs</em> have their own syntax instead of being built on top
   of a language. All you need to make it work is a parser that interprets the language
   or that translates it to another one.
 
