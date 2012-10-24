@@ -44,6 +44,8 @@ $blueer:      #2247ff
   -moz-transition-delay:    $seconds
   transition-delay:         $seconds
 
+$sans:  'Source Sans Pro', sans-serif
+$serif: 'EB Garamond', serif
 
 body
   min-width: 940px
@@ -52,21 +54,21 @@ body
   margin: 0
   color: $black
   background: $background url('/images/bgpattern.png') top left repeat
-  font: normal normal 19px/1.47 apolline
+  font: normal normal 20px/1.47 $serif
   text-align: left
 
 h1
-  font: 700 normal 34px/0.824 angie-sans
+  font: 800 normal 34px/0.824 $sans
   margin: 0.988em 0 0.658em
   color: $blackr
 h2
-  font: normal normal 24px/1.16 angie-sans
+  font: normal normal 24px/1.16 $sans
   margin: 1.740em 0 0.582em
 h3
-  font: bold normal 18px/1.55 angie-sans
+  font: bold normal 18px/1.55 $sans
   margin: 2.325em 0 0.775em
 h4
-  font: normal normal 18px/1.55 angie-sans
+  font: normal normal 18px/1.55 $sans
   margin: 2.325em 0 0.775em
   text-transform: uppercase
 
@@ -104,7 +106,7 @@ aside
   width: 210px
   margin-left: -240px
   color: $grey
-  font: 300 normal .8em/1.84 apolline
+  font: 300 normal .8em/1.84 $serif
 
 code
   margin: 0 .2em 1.73em
@@ -165,7 +167,7 @@ a, a:link, a:active
 
 #fullname
   margin: 20px 20px 10px
-  font: normal normal 1.18em/1 fertigo-pro
+  font: normal normal 1.18em/1 Overlock
   a, a:visited, a:active, a:hover
     color: $blackr
     text-decoration: none
@@ -177,7 +179,7 @@ a, a:link, a:active
     padding: 0
     list-style: none
     li
-      font: normal normal .9em/1.6 angie-sans
+      font: normal normal .9em/1.6 $sans
       a, a:link, a:active, a:visited
         color: $blue
         @include transition-duration(.35s)
@@ -205,7 +207,7 @@ a, a:link, a:active
     margin-top: 20px
     padding: 0
     list-style: none
-    font: normal normal .9em/1.45 angie-sans
+    font: normal normal .9em/1.45 $sans
     li
       display: inline-block
       margin-right: 12px
@@ -227,7 +229,7 @@ a, a:link, a:active
       padding: 0
       border: 0
       margin: 0
-      font: italic 300 .94em/1.36 apolline
+      font: italic 300 .94em/1.36 $serif
       opacity: 0
     #quotation-by
       position: relative
@@ -240,7 +242,7 @@ a, a:link, a:active
   #links
     ul
       padding: 0
-      font: normal normal .9em/1.7 angie-sans
+      font: normal normal .9em/1.7 $sans
     a, a:link, a:active, a:visited
       color: $blue
       @include transition-duration(.35s)
@@ -250,7 +252,7 @@ a, a:link, a:active
 
   #description
     max-width: 24em
-    font: normal normal 1.4em/1.47 apolline
+    font: normal normal 1.4em/1.47 $serif
     p
       margin-bottom: 0
     #blog, #reading, #about
@@ -331,5 +333,5 @@ article
     top: -2px
     margin-left: 10px
     content: 'soon'
-    font: italic normal .8em/1 apolline
+    font: italic normal .8em/1 $serif
     color: red
