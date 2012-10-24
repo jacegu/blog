@@ -44,8 +44,8 @@ $blueer:      #2247ff
   -moz-transition-delay:    $seconds
   transition-delay:         $seconds
 
-$sans:  'Source Sans Pro', sans-serif
-$serif: 'EB Garamond', serif
+$sans:  'open sans', 'arial black'
+$serif: 'gentium basic', georgia, serif
 
 body
   min-width: 940px
@@ -54,11 +54,11 @@ body
   margin: 0
   color: $black
   background: $background url('/images/bgpattern.png') top left repeat
-  font: normal normal 20px/1.47 $serif
+  font: normal normal 16pt/1.47 $serif
   text-align: left
 
 h1
-  font: 800 normal 34px/0.824 $sans
+  font: 800 normal 24pt/0.824 $sans
   margin: 0.988em 0 0.658em
   color: $blackr
 h2
@@ -73,8 +73,9 @@ h4
   text-transform: uppercase
 
 p
-  max-width: 33em
+  max-width: 30em
   margin: 0 0 1.47em
+  text-align: justify
 
 ul, ol, dl
   max-width: 31em
@@ -95,7 +96,8 @@ dd
   margin-left: 1.47em
 
 em
-  font-style: italic
+  font-style: normal
+  text-decoration: underline
 
 strong
   font-weight: 600
