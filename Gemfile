@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'compass'
 gem 'haml'
+gem 'maruku'
 gem 'sass'
 gem 'sinatra'
 gem 'sprockets', '~> 2.0'
