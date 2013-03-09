@@ -1,18 +1,14 @@
 -@title       = "Javier Acero's blog"
 -@description = 'Where I record the things I learn and share them with you. This is also the place where I keep my long road logbook.'
 
-.container_12
-  %h1#title.grid_9.push_3 All posts
-
-#post-list.clearfix
+%section#blog
+  %h1.title All posts
   -@blog.each_published_post do |post|
     %article
-      .date.grid_3
-        =formatted_post_date_for(post)
-      .post.grid_8
-        %h2.title
-          %a{href: url_for(post)}
-            =post.title
-        %p.description
-          ="#{post.description}.. "
-          %a{href: url_for(post)} read it.
+      %h2.title
+        %a{href: url_for(post)}= post.title
+      %p.date= formatted_post_date_for(post)
+      %p.description
+        ="#{post.description}..."
+        %a{href: url_for(post)} read it.
+    %hr

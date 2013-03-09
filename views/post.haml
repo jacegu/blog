@@ -1,10 +1,9 @@
 -@title       = "#{@post.title} · Javier Acero's blog"
 -@description = @post.description
 
-#post.clearfix
-  .date.grid_3
-    =formatted_post_date_for(@post)
-  %h1#title.grid_9
+%article#post
+  %h1.title
     =@post.title
-  .content.grid_9.push_3
-    =haml @post.content
+  %span.date= "#{formatted_post_date_for(@post)}"
+  %p.description= @post.description
+  =haml @post.content

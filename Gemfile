@@ -1,18 +1,18 @@
-source :rubygems
+source 'https://rubygems.org'
+ruby '2.0.0'
 
-gem 'sinatra'
+gem 'compass'
 gem 'haml'
 gem 'sass'
+gem 'sinatra'
+gem 'sprockets', '~> 2.0'
+gem 'sprockets-sass'
+gem 'susy'
 
 group :development do
   gem 'shotgun'
-  gem 'heroku'
 end
 
-group :test do
+group :test, :development do
   gem 'rspec'
-  gem 'cucumber'
-  gem 'capybara'
-  gem 'capybara-webkit'
-  gem 'launchy'
 end

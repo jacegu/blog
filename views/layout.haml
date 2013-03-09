@@ -10,19 +10,19 @@
   -# Remove this if you use the .htaccess
   %meta(content="IE=edge,chrome=1" http-equiv="X-UA-Compatible")
 
-  %title
-    = @title
+  %title= @title
   %meta(name="author" content="Javier Acero")
   %meta(name="description" content="#{@description}")
 
-  -# Mobile viewport optimized: j.mp/bplateviewport
   %meta(name="viewport" content="width=device-width, initial-scale=1")
 
   -# Google web fonts
-  %link(href="http://fonts.googleapis.com/css?family=Gentium+Basic:400|Open+Sans:400,700,800" rel="stylesheet" type="text/css")
+  %link(href="http://fonts.googleapis.com/css?family=Gentium+Book+Basic:700|PT+Serif:400,400italic,700" rel="stylesheet" type="text/css")
+  %link(href="http://fonts.googleapis.com/css?family=Belleza&text=JavierAcero" rel="stylesheet" type="text/css")
 
   -# CSS: implied media="all"
-  %link(rel="stylesheet" href="/stylesheets/style.css")
+  %link(rel="stylesheet" href="/assets/style.css")
+  %link(rel="stylesheet" href="/assets/iphone.css" media="screen and (max-width: 767px)")
 
   -# RSS link
   %link(href="#{url('/blog/rss')}" rel="alternate" type="application/rss+xml")
@@ -31,69 +31,20 @@
   %script(type="text/javascript" src="/javascripts/libs/modernizr-2.0.6.min.js")
 
 %body
-  %header#header.container_12.do_not_center
-    %section#logo.grid_3
-      #box &nbsp;
-      #fullname
-        %a{href: '/', title: 'Back to the main page'}
-          %span.name    Javier
-          %span.surname Acero
-
-      %section#social-links
-        %ul.clearfix
-          %li
-            %a{href: 'http://twitter.com/jacegu', title: 'follow me on twitter'}
-              %img.twitter{src: '/images/twitter.png'} twitter
-          %li
-            %a{href: 'http://github.com/jacegu', title: 'check my code on githug'}
-              %img.github{src: '/images/github.png'} github
-          %li
-            %a{href: 'http://www.linkedin.com/pub/javier-acero-guerra/24/659/611', title: 'check my professional background'}
-              %img.linkedin{src: '/images/linkedin.png'} linkedin
-
-
-    %section#facets
-      %ul.grid_9
-        %li.craftsman     software craftsman
-        %li.kindred       kindred spirit
-        %li.perfectionist perfectionist
-        %li.minimalist    minimalist
-        %li.fanboy
-          %span.symbol &#63743;
-          fanboy
-        %li.lover
-          %span.symbol.heart &hearts;
-          coffee & beer
-
-      %section#quote.grid_9
-        %blockquote.quote  Speak, friend and enter
-        %cite#quotation-by Gandalf
-
-  %nav#menu.container_12.do_not_center
-    %section#links.grid_3
-      %ul.clearfix
-        %li
-          %a#blog{href: url('/blog')} Blog
-        %li
-          %a#rss{href: url('/blog/rss')} Suscribe via RSS
-        %li
-          %span#reading.available-soon Reading List
-        %li
-          %span#about.available-soon About
-
-    %section#description.grid_9
-      %p#current #{@description}
-
-  %section#main.container_12.do_not_center{role: 'main'}
-    = yield
-
+  %header
+    %h1 Javier Acero
+    %nav
+      %a{href: '/'} Blog
+      %a{href: 'http://patheleven.com', target: '_blank'} Work
+      %a{href: 'http://github.com/jacegu', target: '_blank'} Code
+      %a{href: 'http://twitter.com/jacegu', target: '_blank'} Twitter
+  %section{role: 'main'}
+    %section
+      = yield
   %footer
 
   -# JavaScript at the bottom for fast page loading
   = haml :'_javascripts'
-
-  %script(type="text/javascript")
-    $(document).ready(function(){ $('#all').fadeIn(2000); });
 
   -# Google analytics snippet
   = haml :'_analytics'

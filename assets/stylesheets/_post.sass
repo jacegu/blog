@@ -1,0 +1,38 @@
+#post
+  padding-top: 3em
+  .title
+    text-align: center
+
+  .date
+    display: block
+    @include padding-leader(1)
+    @include padding-trailer(1)
+    font-style: italic
+    text-align: center
+
+  .description
+    @include margin-trailer(2)
+    color: lighten($foreground, 10%)
+    font-style: italic
+
+  .gist
+    @include margin-trailer(1)
+    width: 98%
+    font: 300 normal 16px monaco, courier !important
+    .gist-file
+      border-bottom: none
+      .gist-data.gist-syntax
+        background-color: white
+      .line_numbers
+        background: white !important
+        border-right: 0px solid white !important
+  .gist-meta
+    display: none !important
+
+  .vimeo
+    @include border-radius(3px)
+    @include margin-trailer(1)
+    width: 97%
+    height: 23em
+    border: 1px solid whitesmoke
+    text-align: center

@@ -1,51 +1,10 @@
-$background: #fbfbfb
-$white:       #fdfdfd
-$grey:        #808080
-$light_grey:  #e0e0e0
-$black:       #3c3c3c
-$blackr:      #2c2c2c
-$blacker:     #0c0c0c
-$blue:        #32a5f5
-$blueer:      #2247ff
+$sans:  'gentium book basic', sans-serif
+$serif: 'gentium basic', serif
 
-@mixin no-borders
-  border: 0
-  -webkit-border-radius: 0
-  -moz-border-radius: 0
-  border-radius: 0
 
-@mixin rounded-borders($radius)
-  -webkit-border-radius: $radius
-  -moz-border-radius:    $radius
-  border-radius:         $radius
-
-@mixin box-shadow($top, $right, $blur, $color)
-  -webkit-box-shadow: $top $right $blur $color
-  -moz-box-shadow:    $top $right $blur $color
-  box-shadow:         $top $right $blur $color
-
-@mixin text-shadow($top, $right, $blur, $color)
-  -webkit-text-shadow: $top $right $blur $color
-  -moz-text-shadow:    $top $right $blur $color
-  text-shadow:         $top $right $blur $color
-
-@mixin transition-of($property)
-  -webkit-transition-property: $property
-  -moz-transition-property:    $property
-  transition-property:         $property
-
-@mixin transition-duration($seconds)
-  -webkit-transition-duration: $seconds
-  -moz-transition-duration:    $seconds
-  transition-duration:         $seconds
-
-@mixin transition-delay($seconds)
-  -webkit-transition-delay: $seconds
-  -moz-transition-delay:    $seconds
-  transition-delay:         $seconds
-
-$sans:  'open sans', 'arial black'
-$serif: 'gentium basic', georgia, serif
+$base-font-size:   20
+$base-line-height: 1.47
+$line:             $base-font-size * $base-line-height
 
 body
   min-width: 940px
@@ -53,29 +12,24 @@ body
   padding-bottom: 80px
   margin: 0
   color: $black
-  background: $background url('/images/bgpattern.png') top left repeat
-  font: normal normal 16pt/1.47 $serif
+  background: $background url('/images/bg.png') top left repeat
+  font: normal normal #{$base-font-size}px/$base-line-height $serif
   text-align: left
 
 h1
-  font: 800 normal 24pt/0.824 $sans
-  margin: 0.988em 0 0.658em
+  @include type-set(34, bolder, $sans)
   color: $blackr
 h2
-  font: normal normal 24px/1.16 $sans
-  margin: 1.740em 0 0.582em
+  @include type-set(26, normal, $sans)
 h3
-  font: bold normal 18px/1.55 $sans
-  margin: 2.325em 0 0.775em
+  @include type-set(21, bold, $sans)
 h4
-  font: normal normal 18px/1.55 $sans
-  margin: 2.325em 0 0.775em
+  @include type-set(18, normal, $sans)
   text-transform: uppercase
 
 p
   max-width: 30em
-  margin: 0 0 1.47em
-  text-align: justify
+  margin: 0 0 #{$base-line-height}em
 
 ul, ol, dl
   max-width: 31em
@@ -100,7 +54,7 @@ em
   text-decoration: underline
 
 strong
-  font-weight: 600
+  font-weight: 700
 
 aside
   display: inline
@@ -120,7 +74,7 @@ pre
   color: $black
 
 blockquote
-  max-width: 33em
+  max-width: 32em
   margin: 0 0 1.4em 0em
   padding: 2px 0 2px .7em
   color: $grey
@@ -137,9 +91,10 @@ blockquote
 
 cite
   display: block
-  text-align: right
   color: $grey
+  margin-top: .5em
   font-size: .9em
+  text-align: right
   &:before
     content: "- "
 
@@ -295,22 +250,11 @@ article
       max-width: 100%
       margin: 0
 
-.gist
-  width: 41em
-  margin: 0 0 1.47em 0
-  font: 300 normal .82em monaco, courier !important
-  .gist-file
-    .gist-data.gist-syntax
-      background-color: $white
-  .gist-meta
-    font-size: 75% !important
-    a, a:link, a:visited, a:active
-      color: $blue !important
-
 .vimeo
-  margin: 0 auto 1.47em
-  width: 32em
-  height: 24em
+  text-align: center
+  margin: 0 0 1.47em .3em
+  width: 29em
+  height: 23em
   border: 2px solid $blacker
   @include rounded-borders(4px)
 
