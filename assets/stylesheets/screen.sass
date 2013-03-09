@@ -106,6 +106,18 @@ code
   font-weight: 300
   word-spacing: -0.2em
 
+pre
+  @include margin-trailer(1)
+  display: block
+  padding: .7em 1em
+  color: lighten($foreground, 10%)
+  background: white
+  border: 1px solid gainsboro
+  overflow: auto
+  code
+    @include text-shadow(none)
+    @include adjust-font-size-to(15px)
+
 blockquote
   @include margin-trailer(1)
   color: lighten($foreground, 10%)
@@ -122,3 +134,4 @@ blockquote
 
 @import 'blog'
 @import 'post'
+@import 'code'
