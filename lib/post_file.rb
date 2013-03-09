@@ -36,7 +36,8 @@ class PostFile < Post
   end
 
   def content
-    non_empty_lines[FOURTH_LINE..LAST_LINE].join("\n")
+    @source_file_content.split(description).last
+    #non_empty_lines[FOURTH_LINE..LAST_LINE].join("\n")
   end
 
   def non_empty_lines

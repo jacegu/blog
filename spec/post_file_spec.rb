@@ -55,14 +55,14 @@ describe PostFile do
 
   describe '#content' do
     it 'returns every line from the fourth to the last' do
-      @post_file.content.should == "first content line\nsecond content line"
+      @post_file.content.should == "\nfirst content line\n  \nsecond content line"
     end
   end
 
   it 'is equal to a post with the same title, description, content and publication time' do
     the_post = Post.new('title',
                         'description',
-                        "first content line\nsecond content line",
+                        "\nfirst content line\n  \nsecond content line",
                         publication_time)
     @post_file.should == the_post
     the_post.should == @post_file
