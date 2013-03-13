@@ -13,7 +13,8 @@
   %meta(name="viewport" content="width=device-width, initial-scale=1")
 
   -# Google web fonts
-  %link(href="http://fonts.googleapis.com/css?family=Gentium+Book+Basic:700|PT+Serif:400,400italic,700" rel="stylesheet" type="text/css")
+  %link(href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic&subset=latin" rel="stylesheet" type="text/css")
+  %link(href="http://fonts.googleapis.com/css?family=Gentium+Book+Basic:700&subset=latin" rel="stylesheet" type="text/css")
   %link(href="http://fonts.googleapis.com/css?family=Belleza&text=JavierAcero" rel="stylesheet" type="text/css")
 
   -# CSS: implied media="all"
@@ -28,15 +29,15 @@
 
 %body
   %header
-    %h1 Javier Acero
+    %h1
+      %a{href: '/'} Javier Acero
     %nav
-      %a{href: '/'} Blog
+      %a{href: '/blog'} Blog
       %a{href: 'http://patheleven.com', target: '_blank'} Work
-      %a{href: 'http://github.com/jacegu', target: '_blank'} Code
+      %a{href: 'http://github.com/jacegu', target: '_blank'} Github
       %a{href: 'http://twitter.com/jacegu', target: '_blank'} Twitter
   %section{role: 'main'}
-    %section
-      = yield
+    = yield
   %footer
     %p
       &copy; Javier Acero 2009-2013

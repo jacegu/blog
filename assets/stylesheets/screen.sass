@@ -15,32 +15,6 @@ html
   font-family: $sans
   border-top: 8px solid $foreground
 
-body
-  padding: 0 1em
-  >header
-    @include container
-    padding: 3em 0 4em
-    text-align: center
-    border-bottom: 1px double darken($background, 5%)
-    h1
-      @include span-columns(7)
-      font-family: 'belleza'
-      font-size: 4em
-      font-style: normal
-      overflow: hidden
-
-    nav
-      @include span-columns(7)
-      a
-        margin: 0 1em
-  >section
-    @include container
-    border-top: 1px double white
-    padding: 2em 0
-    border-bottom: 1px solid whitesmoke
-
-
-
 h1
   @include adjust-font-size-to(36px)
   font-family: $sans
@@ -131,6 +105,69 @@ blockquote
     line-height: 1
     &:before
       content: "- "
+
+.footnote
+  @include adjust-font-size-to(14px)
+  vertical-align: super
+  line-height: 1em
+
+body
+  padding: 0 1em
+  >header
+    @include container
+    padding: 3em 0 4em
+    text-align: center
+    border-bottom: 1px double darken($background, 7%)
+    h1
+      @include span-columns(7)
+      font-family: 'belleza'
+      font-size: 4em
+      font-style: normal
+      overflow: hidden
+      a
+        color: $foreground !important
+        &:hover
+          text-decoration: none !important
+    nav
+      @include span-columns(7)
+      a
+        margin: 0 1em
+  >section
+    @include container
+    border-top: 1px double white
+    padding: 2em 0 5em
+    border-bottom: 1px double darken($background, 7%)
+  >footer
+    @include container
+    @include adjust-font-size-to(16px)
+    border-top: 1px double white
+    padding: 1em 0
+    overflow: hidden
+    text-align: center
+    p
+      @include margin-trailer(.5)
+
+#home
+  h2
+    @include adjust-font-size-to(40px)
+    @include margin-leader(1)
+    @include margin-trailer(1)
+    text-align: center
+    font-family: $sans
+    font-style: italic
+
+  img
+    @include span-columns(7)
+    @include box-sizing(border-box)
+    @include margin-leader(2)
+    @include margin-trailer(2)
+    border: 1px solid gainsboro
+
+  #footnotes
+    @include adjust-font-size-to(16px)
+    @include margin-leader(1)
+    @include padding-leader(1)
+    border-top: 1px solid darken($background, 7%)
 
 @import 'blog'
 @import 'post'

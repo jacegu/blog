@@ -27,7 +27,7 @@ class BlogWebsite < Sinatra::Base
   end
 
   get '/' do
-    redirect '/blog'
+    haml :home
   end
 
   get '/blog' do
