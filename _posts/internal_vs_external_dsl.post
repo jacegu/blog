@@ -16,9 +16,9 @@ Lately I've been struggling with one of my apprentice tasks because I only knew 
   of limited expressiveness focused on a particular domain.
 
 %p
-  %a{href: 'http://rspec.info/', alt: 'RSpec site'} RSpec
+  %a{href: 'http://rspec.info/', title: 'RSpec site'} RSpec
   or
-  %a{href: 'http://rake.rubyforge.org/', alt: 'Rake on Ruby Forge'} Rake
+  %a{href: 'http://rake.rubyforge.org/', title: 'Rake on Ruby Forge'} Rake
   are clear examples of DSLs. They use all the power of the Ruby language
   to make you feel like using a language that was designed with a particular
   problem in mind.
@@ -50,6 +50,6 @@ Lately I've been struggling with one of my apprentice tasks because I only knew 
   or that translates it to another one.
 
 %p
-  %a{href: 'http://martinfowler.com/bliki/DomainSpecificLanguage.html', alt: 'A post by Martin Fowler about the different kinds of DSLs'} This post
+  %a{href: 'http://martinfowler.com/bliki/DomainSpecificLanguage.html', title: 'A post by Martin Fowler about the different kinds of DSLs'} This post
   by Martin Fowler has been really helpful to understand the whole thing. Now I
   know how to complete my task.
