@@ -5,7 +5,7 @@ Starting with EventMachine I
 Earlier this year I wrote a couple ruby programs using EventMachine. I found it hard to start with it and the documentation or tutorials scarce. Let's fix that.
 
 :markdown
-  *This blog post is a extract of an ebook about EventMachine that I started
+  *This blog post is an extract of an ebook about EventMachine that I started
   writing some time ago. Somehow it ended up half written in some dark corner
   of my hard drive. I have decided to publish the material I have as series of
   posts.* **Please let me know if you find the material useful.**
