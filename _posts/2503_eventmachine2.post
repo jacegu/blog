@@ -16,7 +16,7 @@ Writing evented code has implications that may not be explicit at first look. Th
   - [Starting with EventMachine II](/blog/starting-with-eventmachine-ii)
 
   Despite being a pretty simple six line example, in
-  [the last post](/blog/starting_with_eventmachine_i) you could get the
+  [the last post](/blog/starting-with-eventmachine-i) you could get the
   feeling of how building an EventMachine application will be. Evented code
   has certain characteristics that make it different from the plain old
   sequential code that we are used to write.
