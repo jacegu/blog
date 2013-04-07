@@ -14,6 +14,7 @@ Earlier this year I wrote a couple ruby programs using EventMachine. I found it 
 
   - [Starting with EventMachine I](/blog/starting-with-eventmachine-i)
   - [Starting with EventMachine II](/blog/starting-with-eventmachine-ii)
+  - [Starting with EventMachine III](/blog/starting-with-eventmachine-iii)
 
   ## What's EventMachine
   What's EventMachine you may be wondering? EventMachine is an event-driven I/O and lightweight concurrency library for Ruby. It provides an API to handle many different protocols and the ones that are not distributed with it can be found as gems.
