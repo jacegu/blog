@@ -57,7 +57,7 @@ The event loop and reactor pattern are the two patterns EventMachine is powered 
 
     break if stop_was_called?
     close_dead_connections
-  end</pre></code>
+  end</code></pre>
 
 
   ### Revisiting the *hello world* example
