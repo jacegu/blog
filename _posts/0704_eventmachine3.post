@@ -42,7 +42,7 @@ The event loop and reactor pattern are the two patterns EventMachine is powered 
   Prior to each these three actions EventMachine's reactor checks whether the `stop` method has been called. If it wasn't called the event loop continues otherwise the loop is broken[^C1_07] and the reactor exits the event demultiplexing phase.
 
 
-  [^C1_05]: test versions of EventMachine can also use a better mechanism where available called `epoll`
+  [^C1_05]: latest versions of EventMachine can also use a better mechanism where available called `epoll`
   [^C1_06]: quite literally because it uses Ruby's `loop` construct
   [^C1_07]: again, literally calling `break`
 
