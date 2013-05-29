@@ -1,4 +1,4 @@
-require 'post_file'
+require_relative 'post_file'
 
 class PostDir
   def self.from(dir)

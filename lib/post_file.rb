@@ -1,5 +1,5 @@
-require 'post'
-require 'null_post'
+require_relative 'post'
+require_relative 'null_post'
 
 class PostFile < Post
   attr_reader :source_file_content

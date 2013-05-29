@@ -1,4 +1,4 @@
-require 'publication_time'
+require_relative 'publication_time'
 
 class Post
   include Comparable

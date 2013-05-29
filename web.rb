@@ -1,10 +1,8 @@
 #encoding: utf-8
 
-$: << File.join(File.expand_path(File.dirname(__FILE__)), 'lib')
-
 require 'sinatra'
 require 'sass'
-require 'blog'
+require_relative 'lib/blog'
 
 class BlogWebsite < Sinatra::Base
   configure do
