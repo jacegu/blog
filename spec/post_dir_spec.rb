@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'post_dir'
 
 describe PostDir do

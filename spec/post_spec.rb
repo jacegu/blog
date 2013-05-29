@@ -1,5 +1,4 @@
 #encoding: utf-8
-require 'spec_helper'
 require 'post'
 
 def a_post_entitled(title)

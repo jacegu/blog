@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'publication_time'
 
 describe PublicationTime do

@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'blog'
 require 'null_post'
 

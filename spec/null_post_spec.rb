@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'null_post'
 
 describe NullPost do
