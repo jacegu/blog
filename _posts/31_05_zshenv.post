@@ -19,15 +19,15 @@ Nowadays it's very common to put some of your configuration values, like API sec
   files in the application folder. To do so, you will need to call the
   gem from your application.
 
-  The thing is that the gem is conceived to be used within ruby but
-  environment variables are OS thing. You may want to do this kind of
-  thing when using other platforms or languages.
+  The problem is that the gem is conceived to be used within ruby but
+  environment variables are an OS thing and you may need to solve the
+  same problem when using other platforms or languages.
 
-  Probably they'd have similar tools to do the same thing. But, you
-  already have all the tools you need to do such thing: your shell.
+  Probably they have similar libraries to do it. But, **you
+  already have all the tools you need: your shell**.
 
   ## Exporting variables
-  I am a huge fan of ZSH. And ZSH provides
+  I really like ZSH. And ZSH provides
   [hooks to certain events](http://zsh.sourceforge.net/Doc/Release/Functions.html#Hook-Functions)
   you can plug functions into.
 
@@ -48,7 +48,7 @@ Nowadays it's very common to put some of your configuration values, like API sec
 
   I use `.zhsenv` files but the name doesn't really matter.
 
-  Then I create the file and write the export the environment variables:
+  Then I create the file and export the environment variables:
 
       export TWITTER_KEY=''
       export TWITTER_SECRET=''
