@@ -15,6 +15,7 @@ Writing evented code has implications that may not be explicit at first look. Th
   - [Starting with EventMachine I](/blog/starting-with-eventmachine-i)
   - [Starting with EventMachine II](/blog/starting-with-eventmachine-ii)
   - [Starting with EventMachine III](/blog/starting-with-eventmachine-iii)
+  - [Starting with EventMachine IV](/blog/starting-with-eventmachine-iv)
 
   Despite being a pretty simple six line example, in
   [the last post](/blog/starting-with-eventmachine-i) you could get the

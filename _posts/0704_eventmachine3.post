@@ -15,6 +15,7 @@ The event loop and reactor pattern are the two patterns EventMachine is powered 
   - [Starting with EventMachine I](/blog/starting-with-eventmachine-i)
   - [Starting with EventMachine II](/blog/starting-with-eventmachine-ii)
   - [Starting with EventMachine III](/blog/starting-with-eventmachine-iii)
+  - [Starting with EventMachine IV](/blog/starting-with-eventmachine-iv)
 
   ## Just enough about patterns
   In the [*hello world* example](/blog/starting-with-eventmachine-i) we talked about something called the *event loop*. The *event loop* is one of the two patterns EventMachine is powered by. Although you could use the library without really knowing anything about this patterns, understanding how they work will make a huge difference. There are certain features and bad practices that wouldn't make sense otherwise.
