@@ -2,10 +2,9 @@
 -@description = 'Where I record the things I learn and share them with you. This is also the place where I keep my long road logbook.'
 
 %section#blog
-  %h1.title All posts
   -@blog.each_published_post do |post|
     %article
-      %h2.title
+      %h1.title
         %a{href: url_for(post)}= post.title
       %p.date= formatted_post_date_for(post)
       %p.description

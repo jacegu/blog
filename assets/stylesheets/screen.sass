@@ -1,45 +1,48 @@
 @import 'base'
 @include establish-baseline
 
-$foreground:         #333
-$background:         #fcfcfc
-$action:             #c22a09
+$foreground:         #333330
+$background:         #fdfdfd
+$action:             #b32d21
 
-$sans:  'PT Serif', sans-serif
-$serif: 'gentium book basic', serif
+$serif:  'PT Serif', serif
+$sans:   'Merriweather Sans', sans-serif
 
 html
   @include text-shadow(white 0 1px 0)
   color: $foreground
   background: $background
-  font-family: $sans
+  font-family: $serif
   border-top: 8px solid $foreground
 
 h1
-  @include adjust-font-size-to(36px)
+  @include adjust-font-size-to(40px)
   font-family: $sans
   font-style: italic
 
 h2
   @include adjust-font-size-to(34px)
   @include margin-trailer(.1)
-  font-family: $serif
+  font-family: $sans
   font-weight: 700
+
+h3
+  @include adjust-font-size-to(24px)
+  @include margin-trailer(.2)
+  font-family: $sans
+  font-weight: 700
+h4
+  @include adjust-font-size-to(20px)
+  @include margin-trailer(.2)
+  font-family: $sans
+  text-transform: uppercase
+  font-weight: 700
+
+h1,h2,h3,h4
   a
     color: $foreground !important
     &:hover
       text-decoration: none !important
-h3
-  @include adjust-font-size-to(24px)
-  @include margin-trailer(.4)
-  font-family: $serif
-  font-weight: 700
-h4
-  @include adjust-font-size-to(20px)
-  @include margin-trailer(.4)
-  font-family: $serif
-  text-transform: uppercase
-  font-weight: 700
 
 p
   @include margin-trailer(1)
@@ -79,7 +82,7 @@ sup
 
 code
   @include margin-trailer(1)
-  @include adjust-font-size-to(17px)
+  @include adjust-font-size-to(20px)
   color: darken($foreground, 20%)
   font-family: monaco, courier
   font-weight: 300
@@ -158,7 +161,7 @@ body
     @include margin-leader(1)
     @include margin-trailer(1)
     text-align: center
-    font-family: $sans
+    font-family: $serif
     font-style: italic
 
   img

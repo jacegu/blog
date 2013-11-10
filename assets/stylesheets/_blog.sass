@@ -1,12 +1,8 @@
 #blog
-  >h1
-    @include margin-leader(1)
-    @include margin-trailer(1)
-    text-align: center
   hr
-    width: 60%
+    width: 40%
     margin: 0 auto
-    background: whitesmoke
+    background: darken($background, 8%)
     height: 1px
     border: 0
     border-bottom: 1px solid white
@@ -14,14 +10,14 @@
     @include margin-leader(2)
     @include margin-trailer(2)
     .title
-      @include adjust-font-size-to(26px)
+      @include adjust-font-size-to(34px)
       @include margin-leader(0)
       @include margin-trailer(0)
       font-family: $sans
       font-style: italic
       text-align: center
     .date
-      @include adjust-font-size-to(16px)
+      @include adjust-font-size-to(18px)
       font-style: italic
       text-align: center
       @include margin-leader(0)
@@ -29,3 +25,4 @@
     .description
       @include margin-leader(0)
       @include margin-trailer(0)
+      text-align: justify
