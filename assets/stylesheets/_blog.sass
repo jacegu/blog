@@ -1,28 +1,29 @@
-#blog
-  hr
-    width: 40%
-    margin: 0 auto
-    background: darken($background, 8%)
-    height: 1px
-    border: 0
-    border-bottom: 1px solid white
-  article
-    @include margin-leader(2)
-    @include margin-trailer(2)
-    .title
-      @include adjust-font-size-to(34px)
-      @include margin-leader(0)
-      @include margin-trailer(0)
-      font-family: $sans
-      font-style: italic
-      text-align: center
-    .date
-      @include adjust-font-size-to(18px)
-      font-style: italic
-      text-align: center
-      @include margin-leader(0)
-      @include margin-trailer(.3)
-    .description
-      @include margin-leader(0)
-      @include margin-trailer(0)
-      text-align: justify
+#blog hr
+  width: 60%
+  margin: 0 auto
+  background: darken($background, 4%)
+  height: 1px
+  border: 0
+  &:last-child
+    display: none
+
+#blog article
+  @include margin-leader(2)
+  @include margin-trailer(2)
+  .title
+    @include adjust-font-size-to(30px)
+    @include margin-leader(0)
+    @include margin-trailer(0)
+    font-family: $sans
+    font-style: italic
+    text-align: center
+  .date
+    @include adjust-font-size-to(18px)
+    font-style: italic
+    text-align: center
+    @include margin-leader(0.1)
+    @include margin-trailer(.5)
+  .description
+    @include margin-leader(0)
+    @include margin-trailer(0)
+    text-align: justify

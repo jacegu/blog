@@ -2,8 +2,9 @@
 @include establish-baseline
 
 $foreground:         #333330
+$background:         #ffffff
 $background:         #fdfdfd
-$action:             #b32d21
+$action:             #e80058
 
 $serif:  'PT Serif', serif
 $sans:   'Merriweather Sans', sans-serif
@@ -21,15 +22,15 @@ h1
   font-style: italic
 
 h2
-  @include adjust-font-size-to(34px)
-  @include margin-trailer(.1)
+  @include adjust-font-size-to(28px)
+  @include margin-trailer(.2)
   font-family: $sans
   font-weight: 700
 
 h3
   @include adjust-font-size-to(24px)
   @include margin-trailer(.2)
-  font-family: $sans
+  font-family: $serif
   font-weight: 700
 h4
   @include adjust-font-size-to(20px)
@@ -52,7 +53,7 @@ a, a:link, a:active
   text-decoration: none
   cursor: pointer
   &:visited
-    color: darken($action, 10%)
+    color: darken($action, 4%)
   &:hover
     text-decoration: underline
 
@@ -82,7 +83,7 @@ sup
 
 code
   @include margin-trailer(1)
-  @include adjust-font-size-to(20px)
+  @include adjust-font-size-to(18px)
   color: darken($foreground, 20%)
   font-family: monaco, courier
   font-weight: 300
@@ -93,12 +94,12 @@ pre
   display: block
   padding: .7em 1em
   color: lighten($foreground, 10%)
-  background: white
+  background: #fefefe
   border: 1px solid gainsboro
   overflow: auto
   code
     @include text-shadow(none)
-    @include adjust-font-size-to(15px)
+    @include adjust-font-size-to(17px)
 
 blockquote
   @include margin-trailer(1)
@@ -125,7 +126,7 @@ body
     @include container
     padding: 3em 0 4em
     text-align: center
-    border-bottom: 1px double darken($background, 7%)
+    border-bottom: 1px double darken($background, 4%)
     h1
       @include span-columns(7)
       font-family: 'belleza'
@@ -142,13 +143,11 @@ body
         margin: 0 1em
   >section
     @include container
-    border-top: 1px double white
     padding: 2em 0 5em
-    border-bottom: 1px double darken($background, 7%)
+    border-bottom: 1px double darken($background, 4%)
   >footer
     @include container
     @include adjust-font-size-to(16px)
-    border-top: 1px double white
     padding: 1em 0
     overflow: hidden
     text-align: center

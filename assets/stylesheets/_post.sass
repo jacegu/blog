@@ -11,9 +11,11 @@
     text-align: center
 
   .description
-    @include margin-trailer(2)
-    color: lighten($foreground, 33%)
+    @include margin-trailer(1)
+    @include adjust-font-size-to(25px)
+    color: lighten($foreground, 5%)
     font-style: italic
+    line-height: 1.4
 
   .gist
     @include margin-trailer(1)
