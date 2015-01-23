@@ -9,14 +9,14 @@ This is my 2011 retrospective. A year that has been a life-changing one for me. 
 %h2 Valladolid
 %p As I just wrote I started the year unemployed. My last job had burned me out from my head to my feet nails. I <strong>still loved the profession</strong> but I wanted to take advantage of my situation (I had no rent to pay back then) and find a company where I could do things <em>right</em>.
 
-%p I had plenty of time so I could read and practice a lot. I kept learing <strong>Ruby</strong> and fell in love with it. That love will be the cause much of what had to come during the rest of the year.
+%p I had plenty of time so I could read and practice a lot. I kept learning <strong>Ruby</strong> and fell in love with it. That love will be the cause much of what had to come during the rest of the year.
 
 %h3 Wise choices
 %p
   Back in 2010 I started getting involved with the
-  %a{href: 'http://www.agile-spain.com', target: '_blank'} spanish agile comunity.
+  %a{href: 'http://www.agile-spain.com', target: '_blank'} Spanish agile community.
   That brought me the chance of meeting a lot of interesting people. A few of them lived in the same city I did. They had created
-  %a{href: 'http://agilecyl.org', target: '_blank'} a local comunity
+  %a{href: 'http://agilecyl.org', target: '_blank'} a local community
   in which I also got involved. That was the start of a few awesome friendships.
 
 %p
@@ -25,18 +25,18 @@ This is my 2011 retrospective. A year that has been a life-changing one for me. 
   %a{href: 'http://www.twitter.com/semurat', target: '_blank'} people
   had just started
   %a{href: 'http://www.wiseri.com', target: '_blank'} a new company
-  and needed some help with the development. He offered me the chance to help them and I didn't hesitate to take it. That's how I started learning Groovy and Grails (and fell even more inlove with Ruby).
+  and needed some help with the development. He offered me the chance to help them and I didn't hesitate to take it. That's how I started learning Groovy and Grails (and fell even more in love with Ruby).
 
 %p The company was located in Madrid so I started spending more time there than I used to (my girlfriend lives in Madrid so I usually was in the city 2 or 3 weekends per month).
 
 
 %h3 A week in Be Code
 %p
-  In february I had the chance to finally spend a week in Valencia with the awesome crew of
+  In February I had the chance to finally spend a week in Valencia with the awesome crew of
   %a{href: 'http://becodemyfriend.com', target: '_blank'} Be Code.
   That week was one of the most important ones of 2011. The conversations I had there with
   %a{href: 'http://twitter.com/#!/XaV1uzz', target: '_blank'} Xavi
-  shaked my world and <strong>made me think a lot</strong>.
+  shook my world and <strong>made me think a lot</strong>.
 
 %p
   %aside
@@ -65,7 +65,7 @@ This is my 2011 retrospective. A year that has been a life-changing one for me. 
 %h3 A pet project was born
 
 %p
-  On april
+  On April
   %a{href: '/blog/developing-my-own-blog', target:'_blank'} I released my home-built blog.
   I started it as a way of learning some Cucumber, Sinatra and Haml and ended up learning a lot more.
   The funny thing is that I built up some knowledge that helped me a lot with was about to come.
@@ -78,6 +78,7 @@ This is my 2011 retrospective. A year that has been a life-changing one for me. 
 
 %p
   I can remember perfectly the Sunday I switched my computer on and read the post. I was shocked and thrilled.
-  I opened vim and started coding right away. I didn't stop until I had it done. On monday morning I had already submitted
+  I opened vim and started coding right away. I didn't stop until I had it done. On Monday morning I had already submitted
   %a{href: 'https://github.com/jacegu/apprentice_challenge', target: '_blank'} my solution.
   All I could do was waiting.
+

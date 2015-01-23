@@ -37,7 +37,7 @@ I gave a talk about the importance of code readability and how it is tightly rel
 
 %blockquote
   One difference between a smart programmer and a professional programmer is that the
-  professional understands that <u>clarity is king</u>. Professionals use their
+  professional understands that <strong>clarity is king</strong>. Professionals use their
   powers for good and write code that others can understand.
   %cite Clean Code, Robert C. Martin
 

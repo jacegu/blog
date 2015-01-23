@@ -5,12 +5,12 @@ Starting with EventMachine II
 Writing evented code has implications that may not be explicit at first look. There are 3 aspects that will be affected: flow, program structure and testing.
 
 :markdown
-  *This blog post is an extract of an ebook about EventMachine that I started
+  This blog post is an extract of an ebook about EventMachine that I started
   writing some time ago. Somehow it ended up half written in some dark corner
   of my hard drive. I have decided to publish the material I have as series of
-  posts.* **Please let me know if you find the material useful.**
+  posts. **Please let me know if you find the material useful.**
 
-  *You can find all posts here:*
+  You can find all posts here:
 
   - [Starting with EventMachine I](/blog/starting-with-eventmachine-i)
   - [Starting with EventMachine II](/blog/starting-with-eventmachine-ii)
