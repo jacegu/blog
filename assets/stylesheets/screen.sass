@@ -9,8 +9,8 @@ $foreground:         #4c4c4c
 $background:         #ffffff
 $action:             #6e5baa
 
-$serif:  'Esteban', serif
-$sans:   'Merriweather Sans', sans-serif
+$serif:  'Alegreya', serif
+$sans:   'Lato','Merriweather Sans', sans-serif
 
 html
   @include text-shadow(white 0 1px 0)
@@ -25,22 +25,23 @@ h1
   font-style: italic
 
 h2
-  @include adjust-font-size-to(28px)
+  @include adjust-font-size-to(30px)
   @include margin-trailer(.2)
-  font-family: $sans
+  font-family: $serif
   font-weight: 700
 
 h3
   @include adjust-font-size-to(24px)
   @include margin-trailer(.2)
-  font-family: $serif
+  font-family: $sans
   font-weight: 700
+  font-style: italic
 h4
   @include adjust-font-size-to(20px)
   @include margin-trailer(.2)
-  font-family: $sans
+  font-family: $serif
   text-transform: uppercase
-  font-weight: 700
+  font-weight: 400
 
 h1,h2,h3,h4
   a
@@ -86,7 +87,7 @@ sup
 
 code
   @include margin-trailer(1)
-  @include adjust-font-size-to(18px)
+  @include adjust-font-size-to(17px)
   color: darken($foreground, 20%)
   font-family: monaco, courier
   font-weight: 300
