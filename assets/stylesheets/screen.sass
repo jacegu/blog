@@ -1,16 +1,13 @@
 @import 'base'
 @include establish-baseline
 
-$foreground:         #333330
-$background:         #fdfdfd
-$action:             #e80058
-
-$foreground:         #4c4c4c
+$foreground:         rgba(0,0,0,0.8)
 $background:         #ffffff
-$action:             #6e5baa
+$action:             #e80058
 
 $serif:  'Alegreya', serif
 $sans:   'Lato','Merriweather Sans', sans-serif
+
 
 html
   @include text-shadow(white 0 1px 0)
@@ -98,8 +95,8 @@ pre
   display: block
   padding: .7em 1em
   color: lighten($foreground, 10%)
-  background: #fefefe
-  border: 1px solid gainsboro
+  background: darken($background, 1%)
+  border: 1px solid darken($background, 15%)
   overflow: auto
   code
     @include text-shadow(none)
@@ -120,7 +117,7 @@ blockquote
       content: "- "
 
 .footnote
-  @include adjust-font-size-to(14px)
+  @include adjust-font-size-to(18px)
   vertical-align: super
   line-height: 1em
 
@@ -167,7 +164,7 @@ body
     font-family: $serif
     font-style: italic
 
-  img
+  #haskell
     @include span-columns(7)
     @include box-sizing(border-box)
     @include margin-leader(2)
@@ -183,6 +180,7 @@ body
 .footnotes
   ol li p
     display: inline
+
 
 @import 'blog'
 @import 'post'
