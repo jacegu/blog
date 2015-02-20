@@ -23,13 +23,15 @@ describe Blog do
   end
 
   context 'working with posts' do
-    let(:published1) { double(:post, published?: true) }
-    let(:published2) { double(:post, published?: true) }
-    let(:unpublished){ double(:post, published?: false) }
+    let(:published1) { double('published1', published?: true) }
+    let(:published2) { double('published2', published?: true) }
+    let(:unpublished){ double('unpublished', published?: false) }
 
     before do
       published1.stub(:<=>).with(published2).and_return(1)
       published2.stub(:<=>).with(published1).and_return(-1)
+      published1.stub(:<=>).with(unpublished).and_return(0)
+      published2.stub(:<=>).with(unpublished).and_return(0)
       unpublished.stub(:<=>).and_return(0)
       post_dir.stub_chain(:posts).and_return([unpublished, published2, published1])
     end
