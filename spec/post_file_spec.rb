@@ -1,8 +1,9 @@
 require 'post_file'
 
 describe PostFile do
+  let(:language) { 'es' }
   let(:publication_time){ DateTime.parse('2011-01-01 12:00:00+00:00') }
-  let(:the_file_content){ "#{publication_time}\ntitle\n  \ndescription\nfirst content line\n  \nsecond content line" }
+  let(:the_file_content){ "es\n\n#{publication_time}\ntitle\n  \ndescription\nfirst content line\n  \nsecond content line" }
 
   before(:each) do
     the_file = stub(:file)
@@ -34,35 +35,42 @@ describe PostFile do
     end
   end
 
+  describe '#language' do
+    it 'returns the first line of the file content' do
+      @post_file.language.should == language
+    end
+  end
+
   describe '#publication_time' do
-    it 'returns the first line with text of the file content' do
+    it 'returns the second line with text of the file content' do
       @post_file.publication_time.should == publication_time
     end
   end
 
   describe '#title' do
-    it 'returns the second line with text of the file content' do
+    it 'returns the third line with text of the file content' do
       @post_file.title.should == 'title'
     end
   end
 
   describe '#description' do
-    it 'returns the third line with text of the file content' do
+    it 'returns the fourth line with text of the file content' do
       @post_file.description.should == 'description'
     end
   end
 
   describe '#content' do
-    it 'returns every line from the fourth to the last' do
+    it 'returns every line from the fith to the last' do
       @post_file.content.should == "\nfirst content line\n  \nsecond content line"
     end
   end
 
-  it 'is equal to a post with the same title, description, content and publication time' do
+  it 'is equal to a post with the same title, description, content, publication time and language' do
     the_post = Post.new('title',
                         'description',
                         "\nfirst content line\n  \nsecond content line",
-                        publication_time)
+                        publication_time,
+                       'es')
     @post_file.should == the_post
     the_post.should == @post_file
   end
