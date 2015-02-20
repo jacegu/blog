@@ -3,13 +3,14 @@ require_relative 'publication_time'
 class Post
   include Comparable
 
-  attr_reader :title, :description, :content, :publication_time
+  attr_reader :title, :description, :content, :publication_time, :language
 
-  def initialize(title, description, content, publication_time)
+  def initialize(title, description, content, publication_time, language = 'en')
     @title = title
     @description = description
     @content = content
     @publication_time = publication_time
+    @language = language
   end
 
   def url

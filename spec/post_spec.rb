@@ -2,19 +2,19 @@
 require 'post'
 
 def a_post_entitled(title)
-  Post.new(title, 'description', 'content', DateTime.new)
+  Post.new(title, 'description', 'content', DateTime.new, 'en')
 end
 
 def a_post_described_as(description)
-  Post.new('title', description, 'content', DateTime.new)
+  Post.new('title', description, 'content', DateTime.new, 'en')
 end
 
 def a_post_with_content(content)
-  Post.new('title', 'description', content, DateTime.new)
+  Post.new('title', 'description', content, DateTime.new, 'en')
 end
 
 def a_post_published_on(publication_time)
-  Post.new('title', 'description', 'content', DateTime.parse(publication_time))
+  Post.new('title', 'description', 'content', DateTime.parse(publication_time), 'en')
 end
 
 describe Post do
@@ -23,9 +23,10 @@ describe Post do
     let(:description)      { 'the post description' }
     let(:content)          { 'the post content' }
     let(:publication_time) { DateTime.new }
+    let(:language)         { 'en' }
 
     before do
-      @post = Post.new(title, description, content, publication_time)
+      @post = Post.new(title, description, content, publication_time, language)
     end
 
     it 'is created with a title' do
@@ -42,6 +43,10 @@ describe Post do
 
     it 'is created with a publication time' do
       @post.publication_time.should == publication_time
+    end
+
+    it 'is created with a language' do
+      @post.language.should == language
     end
   end
 
@@ -85,10 +90,10 @@ describe Post do
   end
 
   describe 'two posts' do
-    it 'are equal with the same title, description, content and publication time' do
+    it 'are equal with the same title, description, content, publication time and language' do
       a_date = DateTime.parse('2011-01-01 10:00:00+00:00')
-      a_post       = Post.new('t', 'd', 'c', a_date)
-      another_post = Post.new('t', 'd', 'c', a_date)
+      a_post       = Post.new('t', 'd', 'c', a_date, 'en')
+      another_post = Post.new('t', 'd', 'c', a_date, 'en')
       a_post.should == another_post
       another_post.should == a_post
     end

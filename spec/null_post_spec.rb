@@ -24,6 +24,10 @@ describe NullPost do
     null_post.url.should be_empty
   end
 
+  it 'has an empty language' do
+    null_post.language.should be_empty
+  end
+
   it 'is never published' do
     null_post.should_not be_published
   end
