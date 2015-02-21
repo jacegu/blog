@@ -1,13 +1,10 @@
+es
+
 2011-02-22 10:00:00+02:00
 
-A week in Be Code
+Una semana en BeCode
 
-In this post I tell you how was the week the week I spent at Valencia with the awesome people of Be Code. Day by day I let you know what we did and how.
-
-%p
-  <strong>WARNING:</strong> This is a series of blog posts I have brought back from my old blog. They are written in Spanish. I'm going to translate them eventually but they will be posted untranslated for now.
-
-%h2 First day at Be Code
+%h2 El primer día
 
 %p Desde la habitación del hotel en Valencia recojo <a href="http://twitter.com/#!/kinisoftware/statuses/39808757890289664" target="_blank">el guante que me lanzó Kini</a>. Que conste que ya lo tenía pensado desde que supe que iba a venir a <a href="http://www.becodemyfriend.com/" target="_blank">Be Code</a>, pero no está de mas darle el crédito del empujón final.
 
@@ -41,7 +38,7 @@ In this post I tell you how was the week the week I spent at Valencia with the a
 
 
 
-%h2 Second day at Be Code
+%h2 Segundo día
 
 %p Pese a lo que cabía esperar, no empezamos arreglando el problema de Hudson. En un bonito ejemplo de uso de <i>Timeboxing</i> el problema con Selenium pasó al panel como deuda técnica (tarjetita gris :P) en la sección dedicada a impedimentos. Teníamos que empezar a aportar valor y, teniendo en cuenta que los únicos que íbamos a trabajar en Shift'o'rama por ahora éramos Xavi y yo, no era algo crítico.
 
@@ -67,7 +64,7 @@ In this post I tell you how was the week the week I spent at Valencia with the a
 
 
 
-%h2 Third day at Be Code
+%h2 Tercer día
 
 %p El tercer día siguió por los mismos derroteros que el anterior. Comenzamos justo por dónde lo habíamos dejado: implementando la tarea emergente que detectamos el martes.
 
@@ -87,7 +84,7 @@ In this post I tell you how was the week the week I spent at Valencia with the a
 
 
 
-%h2 Fourth day at Be Code
+%h2 Cuarto día
 
 %p El jueves comenzó con una desagradable sorpresa. Nada más llegar a Be Code me entero de que no hay internet. Con la esperanza de que volviera pronto me junté con Xavi para solventar una pequeña deuda técnica que teníamos pendiente. No nos llevó mucho tiempo. A los pocos segundos de hacer <i>commit</i> llamó a la puerta de Be Code <a href="http://twitter.com/#!/wolframkriesing" target="_blank">Wolfram</a>.
 
@@ -107,7 +104,7 @@ In this post I tell you how was the week the week I spent at Valencia with the a
 
 
 
-%h2 Fifth and last day at Be Code
+%h2 Quinto y último día
 
 %p Después de los problemas de intendencia del jueves las cosas volvieron a la normalidad. Aprovechamos la mañana para programar a saco. Nos quedaba una tarea de las que detectamos el martes y tres tareas emergentes más que añadimos.
 
@@ -135,7 +132,7 @@ In this post I tell you how was the week the week I spent at Valencia with the a
 
 
 
-%h2 Prologue and epilogue of my week in Be Code
+%h2 Prólogo y epílogo de mi semana en BeCode
 
 %p Supongo que muchos ya sabíais que me proponía pasar una semana en Valencia con la gente de Be Code. A otros igual os pilló un poco de sorpresa saber que estaba allí. Como no he dado ninguna explicación de qué me llevó allí ni lo que pretendía con semejante experiencia quiero aprovechar esta retrospectiva para compartir los motivos que me llevaron a embarcarme en esta experiencia.
 
