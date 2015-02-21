@@ -1,3 +1,5 @@
 language: ruby
 rvm:
   - jruby-9000
+notifications:
+    email: false
