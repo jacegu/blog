@@ -6,8 +6,8 @@ describe PostFile do
   let(:the_file_content){ "es\n\n#{publication_time}\ntitle\n  \ndescription\nfirst content line\n  \nsecond content line" }
 
   before(:each) do
-    the_file = stub(:file)
-    the_file.stub(:read).and_return(the_file_content)
+    the_file = double(:file)
+    allow(the_file).to receive(:read).and_return(the_file_content)
     @post_file = PostFile.new(the_file)
   end
 
@@ -16,52 +16,52 @@ describe PostFile do
 
     context 'if the file is empty' do
       it 'returns a NullPost' do
-        the_file.stub(:read).and_return('')
-        PostFile.from(the_file).class.should == NullPost
+        allow(the_file).to receive(:read).and_return('')
+        expect(PostFile.from(the_file).class).to eq(NullPost)
       end
     end
 
     context 'if the file is not empty' do
       it 'returns a post file' do
-        the_file.stub(:read).and_return(the_file_content)
-        PostFile.from(the_file).class.should == PostFile
+        allow(the_file).to receive(:read).and_return(the_file_content)
+        expect(PostFile.from(the_file).class).to eq(PostFile)
       end
     end
   end
 
   describe '#new' do
     it 'reads the content of the given file' do
-      @post_file.source_file_content.should == the_file_content
+      expect(@post_file.source_file_content).to eq(the_file_content)
     end
   end
 
   describe '#language' do
     it 'returns the first line of the file content' do
-      @post_file.language.should == language
+      expect(@post_file.language).to eq(language)
     end
   end
 
   describe '#publication_time' do
     it 'returns the second line with text of the file content' do
-      @post_file.publication_time.should == publication_time
+      expect(@post_file.publication_time).to eq(publication_time)
     end
   end
 
   describe '#title' do
     it 'returns the third line with text of the file content' do
-      @post_file.title.should == 'title'
+      expect(@post_file.title).to eq('title')
     end
   end
 
   describe '#description' do
     it 'returns the fourth line with text of the file content' do
-      @post_file.description.should == 'description'
+      expect(@post_file.description).to eq('description')
     end
   end
 
   describe '#content' do
     it 'returns every line from the fith to the last' do
-      @post_file.content.should == "\nfirst content line\n  \nsecond content line"
+      expect(@post_file.content).to eq("\nfirst content line\n  \nsecond content line")
     end
   end
 
@@ -71,7 +71,7 @@ describe PostFile do
                         "\nfirst content line\n  \nsecond content line",
                         publication_time,
                        'es')
-    @post_file.should == the_post
-    the_post.should == @post_file
+    expect(@post_file).to eq(the_post)
+    expect(the_post).to eq(@post_file)
   end
 end
