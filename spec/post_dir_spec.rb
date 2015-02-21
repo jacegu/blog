@@ -5,31 +5,31 @@ describe PostDir do
   let(:path){ '/path/to/the/directory' }
 
   before do
-    dir.stub(:path).and_return(path)
+    allow(dir).to receive(:path).and_return(path)
   end
 
   it 'has a path' do
-    PostDir.new(dir).path.should == path
+    expect(PostDir.new(dir).path).to eq(path)
   end
 
   describe '::from directory' do
     it 'creates a post directory from the opened directory' do
-      PostDir.should_receive(:new).with(dir)
+      expect(PostDir).to receive(:new).with(dir)
       PostDir.from(dir)
     end
   end
 
   describe '::at path' do
     it 'opens the directory at the given path' do
-      Dir.should_receive(:open).with(path)
+      expect(Dir).to receive(:open).with(path)
       PostDir.at(path)
     end
 
     it 'creates a post directory with the opened directory' do
       the_post_dir = double :post_dir
-      Dir.stub(:open).with(path).and_return(dir)
-      PostDir.should_receive(:new).with(dir).and_return(the_post_dir)
-      PostDir.at(path).should == the_post_dir
+      allow(Dir).to receive(:open).with(path).and_return(dir)
+      expect(PostDir).to receive(:new).with(dir).and_return(the_post_dir)
+      expect(PostDir.at(path)).to eq(the_post_dir)
     end
   end
 
@@ -42,16 +42,16 @@ describe PostDir do
     let(:path_to_dir_entry)       { File.join(path, a_dir_entry) }
 
     before do
-      File.stub(:file?).with(path_to_file_entry).and_return(true)
-      File.stub(:file?).with(path_to_post_file_entry).and_return(true)
-      File.stub(:file?).with(path_to_dir_entry).and_return(false)
-      dir.stub(:entries).and_return([a_post_file_entry, a_dir_entry, a_file_entry])
+      allow(File).to receive(:file?).with(path_to_file_entry).and_return(true)
+      allow(File).to receive(:file?).with(path_to_post_file_entry).and_return(true)
+      allow(File).to receive(:file?).with(path_to_dir_entry).and_return(false)
+      allow(dir).to receive(:entries).and_return([a_post_file_entry, a_dir_entry, a_file_entry])
       @dir = PostDir.from(dir)
     end
 
     describe '#entries' do
       it 'returns the absolute path of the entries of the directory' do
-        @dir.entries.should include(path_to_file_entry,
+        expect(@dir.entries).to include(path_to_file_entry,
                                     path_to_post_file_entry,
                                     path_to_dir_entry)
       end
@@ -59,11 +59,11 @@ describe PostDir do
 
     describe '#post_file_entries' do
       it 'returns the entries named like a post' do
-        @dir.post_file_entries.should include(path_to_post_file_entry)
+        expect(@dir.post_file_entries).to include(path_to_post_file_entry)
       end
 
       it 'only returns entries that are files (ignores dirs)' do
-        @dir.post_file_entries.should_not include(path_to_dir_entry)
+        expect(@dir.post_file_entries).not_to include(path_to_dir_entry)
       end
     end
 
@@ -72,21 +72,21 @@ describe PostDir do
       let(:the_post_file) { double(:post_file) }
 
       before do
-        File.stub(:open).with(path_to_post_file_entry).and_return(the_file)
-        PostFile.stub(:from).with(the_file).and_return(the_post_file)
+        allow(File).to receive(:open).with(path_to_post_file_entry).and_return(the_file)
+        allow(PostFile).to receive(:from).with(the_file).and_return(the_post_file)
       end
 
       it 'returns a post for each post file in it' do
-        @dir.posts.should == [the_post_file]
+        expect(@dir.posts).to eq([the_post_file])
       end
 
       it 'does not create posts from directories' do
-        File.should_not_receive(:open).with(path_to_dir_entry)
+        expect(File).not_to receive(:open).with(path_to_dir_entry)
         @dir.posts
       end
 
       it 'does not create posts from files that are not posts' do
-        File.should_not_receive(:open).with(path_to_file_entry)
+        expect(File).not_to receive(:open).with(path_to_file_entry)
         @dir.posts
       end
     end
