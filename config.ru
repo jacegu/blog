@@ -1,4 +1,4 @@
-require "./web/web"
+require "./web/site"
 require "./lib/post_dir"
 
 require "compass"
