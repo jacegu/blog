@@ -2,7 +2,7 @@
 
 require 'sinatra'
 require 'sass'
-require_relative 'lib/blog'
+require_relative '../lib/blog'
 
 class BlogWebsite < Sinatra::Base
   configure do
