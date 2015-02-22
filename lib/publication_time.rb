@@ -6,10 +6,6 @@ module PublicationTime
   def to_rfc822
     strftime(RFC822_FORMAT)
   end
-
-  def past?
-    self < DateTime.now
-  end
 end
 
 class DateTime
