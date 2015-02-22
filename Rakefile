@@ -25,4 +25,10 @@ namespace :spec do
   end
 end
 
+desc "Run specs and report coverage to CodeClimate"
+RSpec::Core::RakeTask.new(:ci) do |task|
+  task.rspec_opts = "-color --format progress --require coverage_reporter"
+  task.verbose = false
+end
+
 task default: ['spec:unit']

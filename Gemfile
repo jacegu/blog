@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.2.0", engine: "jruby", engine_version: "9.0.0.0.pre1"
+ruby "2.0.0", engine: "jruby", engine_version: "1.7.17"
 
 
 gem "compass",        "1.0.3"
@@ -18,5 +18,6 @@ gem "susy",           "2.2.2"
 
 group :test do
   gem "rspec",        "~> 3.2"
+  gem "codeclimate-test-reporter"
 end
 

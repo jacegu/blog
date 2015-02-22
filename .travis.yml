@@ -1,5 +1,7 @@
 language: ruby
 rvm:
-  - jruby-9000
+  - jruby-1.7.17
+script:
+  - bundle exec rake ci
 notifications:
     email: false
