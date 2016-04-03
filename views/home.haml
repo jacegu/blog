@@ -1,5 +1,6 @@
 %section#home
   %h2 Hi there!
+
   %p
     As you may have guessed my name is Javier Acero. I team up
     and <em>collaborate</em> with people and companies
@@ -7,6 +8,9 @@
     Unlike most developers, I write code that is <em>reliable</em>,
     <em>easy to change</em> and
     <em>bug free</em><span class="footnote"><a href="#footnote1">1</a></span>.
+
+  %figure
+    %img#haskell{src: '/images/haskellthecat.jpg', alt: '@haskellthecat'}
 
   %p
     I have plenty of experience in
@@ -25,8 +29,6 @@
     a wide variety of topics besides software: from economics, to marketing.
     Sometimes even fiction too.
 
-  %figure
-    %img#haskell{src: '/images/haskellthecat0.jpg', alt: '@haskellthecat'}
 
   %h3 Contact
   %p
@@ -40,14 +42,3 @@
           There will always be bugs. But by applying testing practices
           the number of bugs will be <strong>really low</strong>.
 
-%script{src: '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', type: 'text/javascript'}
-
-:javascript
-  var img = $('#haskellthecat);
-  img.bind('mouseover', function() {
-    img.attr('src', '/images/haskellthecat1.jpg');
-  });
-
-  img.bind('mouseout', function() {
-    img.attr('src', '/images/haskellthecat0.jpg');
-  });
