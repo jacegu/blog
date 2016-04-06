@@ -12,9 +12,9 @@ Some thoughts on Ruby, Rails, Elixir and Phoenix and how libraries, frameworks a
 
   I've been using [Ruby](https://www.ruby-lang.org) as my main programming language since 2010. As of today I still enjoy its syntax and simplicity. Its community is very friendly and productive and many companies and products have sprung from it.
 
-  However all these years have not been a path of roses. I have seen how the Ruby community has been deeply influenced by one big project: [Ruby on Rails](http://rubyonrails.org/). The standards and conventions of that project were taken as the right way of using the language. There have been plenty of voices complaining about it yet the mainstream mentality hasn't changed one bit.
+  However all these years have not been a path of roses. I have seen how the Ruby community has been deeply influenced by one big project: [Ruby on Rails](http://rubyonrails.org/). The standards and conventions of that project were taken as the right way of using the language. There have been [plenty](http://blog.steveklabnik.com/posts/2011-12-30-active-record-considered-harmful) of [voices](http://confreaks.tv/videos/goruco2012-hexagonal-rails) [complaining](http://solnic.eu/2015/06/06/cutting-corners-or-why-rails-may-kill-ruby.html) about it yet the mainstream mentality hasn't changed one bit.
 
-  The other problem that any Ruby developer will face sooner rather than later is performance. If there were voices in the community warning about the Rails way of doing things the complains about the performance have been an outcry.
+  The other problem that any Ruby developer will face sooner rather than later is performance. If there were people in the community warning about the Rails way of doing things the complains about the performance have been an outcry.
 
   It's been three years since this thought crossed my mind for the first time and I still think that **Rails and the [GIL](https://en.wikipedia.org/wiki/Global_interpreter_lock) will kill[^C1_1] Ruby**. There are countless examples of how bad the maintainability of Rails applications gets as the code base grows. You will find even more cases of performance issues. There is a lesson to be learnt lurking in there. A lesson that I won't easily forget when I choose my next go-to programming language.
 
