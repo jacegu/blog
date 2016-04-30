@@ -20,7 +20,7 @@ class Post
   end
 
   def published?
-    publication_time.past?
+    in_the_past?(publication_time)
   end
 
   def found?
@@ -36,5 +36,11 @@ class Post
 
   def <=>(other)
     other.publication_time <=> publication_time
+  end
+
+  private
+
+  def in_the_past?(datetime)
+    datetime < DateTime.now
   end
 end

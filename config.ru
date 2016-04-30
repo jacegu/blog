@@ -1,10 +1,10 @@
-require './web'
-require './lib/post_dir'
+require "./web/site"
+require "./lib/post_dir"
 
-require 'compass'
-require 'sprockets'
-require 'sprockets-sass'
-require 'susy'
+require "compass"
+require "sprockets"
+require "sprockets-sass"
+require "susy"
 
 Blog.load_posts_from PostDir.at('_posts')
 
@@ -14,14 +14,14 @@ BlogWebsite.configure(:production) do
 end
 
 Compass.configuration do |config|
-  config.project_path = File.dirname(__FILE__)
-  config.sass_dir = 'assets/stylesheets/'
+  config.project_path = File.join(File.dirname(__FILE__), "web")
+  config.sass_dir = "web/assets/stylesheets/"
 end
 
 map '/assets' do
   environment = Sprockets::Environment.new
-  environment.append_path 'assets/javascripts'
-  environment.append_path 'assets/stylesheets'
+  environment.append_path "web/assets/javascripts"
+  environment.append_path "web/assets/stylesheets"
   run environment
 end
 
