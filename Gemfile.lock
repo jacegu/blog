@@ -18,15 +18,10 @@ GEM
       sass (>= 3.2, < 3.5)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    dotenv (0.7.0)
     ffi (1.9.6)
     ffi (1.9.6-java)
-    foreman (0.67.0)
-      dotenv (~> 0.7.0)
-      thor (~> 0.17.0)
-    foreman (0.67.0-java)
-      dotenv (~> 0.7.0)
-      thor (~> 0.17.0)
+    foreman (0.81.0)
+      thor (~> 0.19.1)
     haml (4.0.6)
       tilt
     hike (1.2.3)
@@ -37,7 +32,7 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
-    rake (10.4.2)
+    rake (11.1.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -74,7 +69,7 @@ GEM
       tilt (~> 1.1)
     susy (2.2.2)
       sass (>= 3.3.0, < 3.5)
-    thor (0.17.0)
+    thor (0.19.1)
     tilt (1.4.1)
 
 PLATFORMS
@@ -84,11 +79,11 @@ PLATFORMS
 DEPENDENCIES
   codeclimate-test-reporter
   compass (~> 1.0.0)
-  foreman (= 0.67.0)
+  foreman (~> 0.81.0)
   haml (= 4.0.6)
   maruku (= 0.7.2)
   puma (~> 3.4.0)
-  rake (= 10.4.2)
+  rake (~> 11.1.0)
   rspec (~> 3.2)
   sass (~> 3.4.0)
   sinatra (~> 1.4.0)
