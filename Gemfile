@@ -7,7 +7,6 @@ gem "foreman",        "0.67.0"
 gem "haml",           "4.0.6"
 gem "maruku",         "0.7.2"
 gem "puma",           "2.11.1"
-gem "rack",           "< 1.6.0" # See: http://stackoverflow.com/questions/27983465/nomethod-error-join-on-jruby-padrino-application-on-tomcat-8
 gem "rake",           "10.4.2"
 gem "sass",           "3.4.12"
 gem "sinatra",        "1.4.5"
