@@ -16,7 +16,7 @@ RSpec.describe "A Mog blog" do
   let(:post_dir_path) { "spec/fixtures" }
 
   describe "Listing all posts" do
-    let(:posts) { blog.all_posts }
+    let(:posts) { blog.list_all_posts }
 
     it "returns all the existing posts" do
       expect(posts).to match_array([
@@ -55,7 +55,7 @@ RSpec.describe "A Mog blog" do
   end
 
   describe "Listing all posts by date" do
-    let(:posts) { blog.published_posts }
+    let(:posts) { blog.list_published_posts }
 
    it "returns all the published posts ordered by date" do
       expect(posts.count).to eq(3)

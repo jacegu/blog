@@ -4,12 +4,12 @@ module Mog
       @post_repository = post_repository
     end
 
-    def all_posts
+    def list_all_posts
       @post_repository.list_posts
     end
 
-    def published_posts
-      all_posts.select(&:published?).sort_by(&:title).sort(&date_desc)
+    def list_published_posts
+      list_all_posts.select(&:published?).sort_by(&:title).sort(&date_desc)
     end
 
     private
