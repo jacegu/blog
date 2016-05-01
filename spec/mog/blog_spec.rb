@@ -70,4 +70,16 @@ RSpec.describe "A Mog blog" do
     include_examples "when there are no posts"
   end
 
+  describe "Getting a post by slug" do
+    it "returns the post" do
+      post = blog.get_post("post-a")
+
+      expect(post.title).to eq("post a")
+    end
+
+    context "when no post was found" do
+      it "returns an error"
+    end
+  end
+
 end
