@@ -10,6 +10,10 @@ module Mog
       @content     = content
     end
 
+    def published?
+      Date.today >= Date.parse(date)
+    end
+
     def ==(other)
       other.is_a?(Mog::Post) &&
         title == other.title &&
