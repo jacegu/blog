@@ -78,7 +78,11 @@ RSpec.describe "A Mog blog" do
     end
 
     context "when no post was found" do
-      it "returns an error"
+      it "returns an error" do
+        expect {
+          blog.get_post("not-found")
+        }.to raise_error(Mog::Blog::PostNotFoundError)
+      end
     end
   end
 
