@@ -11,9 +11,7 @@ module Mog
     end
 
     def slug
-      slug = title.downcase
-      slug_chunks = slug.split.map{ |chunk| chunk.gsub(/\W|_/, '') }
-      slug_chunks.join('-')
+      @slug ||= generate_slug
     end
 
     def published?
@@ -27,6 +25,14 @@ module Mog
         date == other.date &&
         description == other.description &&
         content == other.content
+    end
+
+    private
+
+    def generate_slug
+      slug = title.downcase
+      slug_chunks = slug.split.map{ |chunk| chunk.gsub(/\W|_/, '') }
+      slug_chunks.join('-')
     end
   end
 end
