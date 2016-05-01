@@ -1,3 +1,5 @@
+require 'date'
+
 module Mog
   class Post
     attr_reader :title, :lang, :date, :description, :content
