@@ -10,13 +10,12 @@ shared_examples_for "when there are no posts" do
   end
 end
 
-
 RSpec.describe "A Mog blog" do
   let(:blog) { Mog.blog(post_repository: post_repository) }
   let(:post_repository) { Mog.post_repository(post_dir_path: post_dir_path) }
+  let(:post_dir_path) { "spec/fixtures" }
 
   describe "Listing all posts" do
-    let(:post_dir_path) { "spec/fixtures" }
     let(:posts) { blog.all_posts }
 
     it "returns all the existing posts" do
@@ -56,7 +55,6 @@ RSpec.describe "A Mog blog" do
   end
 
   describe "Listing all posts by date" do
-    let(:post_dir_path) { "spec/fixtures" }
     let(:posts) { blog.published_posts }
 
    it "returns all the published posts ordered by date" do
