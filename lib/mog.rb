@@ -1,3 +1,4 @@
+require_relative 'mog/errors'
 require_relative 'mog/blog'
 require_relative 'mog/post'
 require_relative 'mog/post_repository'

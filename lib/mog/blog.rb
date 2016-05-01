@@ -1,13 +1,11 @@
 module Mog
   class Blog
-    PostNotFoundError = Class.new(StandardError)
-
     def initialize(post_repository)
       @post_repository = post_repository
     end
 
     def get_post(post_slug)
-      list_published_posts.find(&by_slug(post_slug)) or raise PostNotFoundError
+      list_published_posts.find(&by_slug(post_slug)) or raise Errors::PostNotFound
     end
 
     def list_published_posts
