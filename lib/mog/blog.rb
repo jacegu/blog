@@ -11,7 +11,7 @@ module Mog
     end
 
     def list_published_posts
-      list_all_posts.select(&:published?).sort_by(&:title).sort(&date_desc)
+      list_all_posts.select(&:published?).sort_by(&:title).sort(&by_date_desc)
     end
 
     def list_all_posts
@@ -24,7 +24,7 @@ module Mog
       -> (post) { post.slug == slug }
     end
 
-    def date_desc
+    def by_date_desc
       -> (post1, post2) { post2.date <=> post1.date }
     end
 
