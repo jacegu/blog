@@ -32,7 +32,11 @@ module Mog
     private
 
     def to_date(date)
-      date ? Date.parse(date) : nil
+      case date
+      when NilClass then nil
+      when Date     then date
+      when String   then Date.parse(date)
+      end
     end
 
     def generate_slug
