@@ -12,9 +12,9 @@ module Mog
 
     def post_files_in(post_dir_path)
       Dir.open(post_dir_path)
+        .reject { |file| file.start_with?(".") }
         .map    { |file| File.join(post_dir_path, file) }
         .reject { |file| File.directory?(file) }
-        .select { |file| file.end_with?("markdown") }
     end
 
     def parse_files(post_file_paths)
