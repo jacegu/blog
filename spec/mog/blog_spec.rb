@@ -60,11 +60,11 @@ RSpec.describe "A Mog blog" do
    it "returns all the published posts ordered by date" do
       expect(posts.count).to eq(3)
       expect(posts[0].title).to eq("post title")
-      expect(posts[0].date).to eq("2015-05-01")
+      expect(posts[0].date).to eq(Date.parse("2015-05-01"))
       expect(posts[1].title).to eq("post a")
-      expect(posts[1].date).to eq("2015-04-11")
+      expect(posts[1].date).to eq(Date.parse("2015-04-11"))
       expect(posts[2].title).to eq("post b")
-      expect(posts[2].date).to eq("2015-04-11")
+      expect(posts[2].date).to eq(Date.parse("2015-04-11"))
     end
 
     include_examples "when there are no posts"

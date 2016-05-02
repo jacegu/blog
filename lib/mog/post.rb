@@ -4,10 +4,10 @@ module Mog
   class Post
     attr_reader :title, :lang, :date, :description, :content
 
-    def initialize(title: "", lang: "", date: "", description: "", content: "")
+    def initialize(title: "", lang: "", date: nil, description: "", content: "")
       @title       = title
       @lang        = lang
-      @date        = date
+      @date        = to_date(date)
       @description = description
       @content     = content
     end
@@ -17,7 +17,7 @@ module Mog
     end
 
     def published?
-      Date.today >= Date.parse(date)
+      Date.today >= date
     end
 
     def ==(other)
@@ -31,10 +31,15 @@ module Mog
 
     private
 
+    def to_date(date)
+      date ? Date.parse(date) : nil
+    end
+
     def generate_slug
       slug = title.downcase
       slug_chunks = slug.split.map{ |chunk| chunk.gsub(/\W|_/, '') }
       slug_chunks.join('-')
     end
+
   end
 end

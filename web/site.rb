@@ -9,8 +9,7 @@ class BlogWebsite < Sinatra::Base
 
   helpers do
     def formatted_post_date_for(post)
-      date = Date.parse(post.date)
-      "#{Date::ABBR_MONTHNAMES[date.month]} #{date.day}, #{date.year}"
+      "#{Date::ABBR_MONTHNAMES[post.date.month]} #{post.date.day}, #{post.date.year}"
     end
 
     def url_for(post)
