@@ -11,20 +11,20 @@
       This is where Javier Acero records what he learns about software
       development and where he reflects about his long road.
     %language en-US
-    %lastBuildDate #{@blog.published_posts[0].publication_time.to_rfc822}
+    %lastBuildDate #{date_to_rfc822(@posts.first)}
     %webMaster j4cegu@gmail.com (Javier Acero)
     %managingEditor j4cegu@gmail.com (Javier Acero)
 
-    -@blog.each_published_post do |post|
+    -@posts.each do |post|
       %item
         %title #{post.title}
         %link  #{url_for(post)}
         %description #{post.description}
         %author j4cegu@gmail.com (Javier Acero)
-        %pubDate #{post.publication_time.to_rfc822}
-        %guid(isPermaLink='true') #{url('/blog/'+ post.url)}
-        %comments #{url('/blog/' + post.url + '#disqus_thread')}
+        %pubDate #{date_to_rfc822(post)}
+        %guid(isPermaLink='true') #{url_for(post)}
         %content:encoded
+          -markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
           <![CDATA[
-          =haml post.content
+          = markdown.render(post.content)
           ]]>

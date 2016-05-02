@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sass'
+require 'redcarpet'
 require_relative '../lib/mog'
 
 class BlogWebsite < Sinatra::Base
@@ -10,6 +11,11 @@ class BlogWebsite < Sinatra::Base
   helpers do
     def formatted_post_date_for(post)
       "#{Date::ABBR_MONTHNAMES[post.date.month]} #{post.date.day}, #{post.date.year}"
+    end
+
+    RFC822_FORMAT = "%a, %d %b %Y %T %z"
+    def date_to_rfc822(post)
+      post.date.strftime(RFC822_FORMAT)
     end
 
     def url_for(post)
@@ -27,13 +33,14 @@ class BlogWebsite < Sinatra::Base
     haml :blog
   end
 
+  get '/blog/rss' do
+    @posts = Mog.blog.list_published_posts
+    haml :'rss.xml', layout: false
+  end
+
   get '/blog/:post_slug' do
     @post = Mog.blog.get_post(params[:post_slug])
     haml :post
-  end
-
-  get '/blog/rss' do
-    haml :'rss.xml', :layout => false
   end
 
   get '/about' do
