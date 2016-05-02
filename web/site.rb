@@ -1,8 +1,7 @@
-#encoding: utf-8
-
 require 'sinatra'
 require 'sass'
-require_relative '../lib/blog'
+require 'redcarpet'
+require_relative '../lib/mog'
 
 class BlogWebsite < Sinatra::Base
   configure do
@@ -11,43 +10,36 @@ class BlogWebsite < Sinatra::Base
 
   helpers do
     def formatted_post_date_for(post)
-      date = post.publication_time
-      "#{Date::ABBR_MONTHNAMES[date.month]} #{date.day}, #{date.year}"
+      "#{Date::ABBR_MONTHNAMES[post.date.month]} #{post.date.day}, #{post.date.year}"
+    end
+
+    def date_to_rfc822(post)
+      post.date.strftime("%a, %d %b %Y %T %z")
     end
 
     def url_for(post)
-      url("/blog/#{post.url}")
+      url("/blog/#{post.permalink}")
     end
   end
 
-  before do
-    @blog = Blog.new
-  end
 
   get '/' do
     haml :home
   end
 
   get '/blog' do
+    @posts = Mog.blog.list_published_posts
     haml :blog
   end
 
   get '/blog/rss' do
-    haml :'rss.xml', :layout => false
+    @posts = Mog.blog.list_published_posts
+    haml :'rss.xml', layout: false
   end
 
-  get '/blog/:post_url' do
-    @post = @blog.published_post_with_url(params[:post_url])
-    if @post.found?
-      cache_it_for A_MONTH
-      haml :post
-    else
-      not_found
-    end
-  end
-
-  get '/reading' do
-    haml :reading
+  get '/blog/:post_permalink' do
+    @post = Mog.blog.get_post(params[:post_permalink])
+    haml :post
   end
 
   get '/about' do
@@ -62,13 +54,12 @@ class BlogWebsite < Sinatra::Base
     haml :'sitemap.xml', :layout => false
   end
 
+  error Mog::Errors::PostNotFound do
+    not_found
+  end
+
   not_found do
-    '404'
+    "404"
   end
 
-  A_MONTH =  60 * 60 * 24 * 30
-
-  def cache_it_for(time)
-    cache_control :public, max_age: time
-  end
 end

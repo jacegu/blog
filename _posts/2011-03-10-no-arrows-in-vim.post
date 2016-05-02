@@ -1,38 +1,34 @@
-en
-
-2011-03-10 10:00+02:00
-
 No arrows in Vim
-
+en
+2011-03-10
 Configure your Vim to disable the arrow keys and learn how to move with the right keys.
 
-:markdown
+---
 
- I've been using Vim a lot lately.
+I've been using Vim a lot lately.
 
-  Vim was the first editor I ever used to write code. The first lines of code I wrote were written with Vim. I kept using it several years in college. I dropped it when I started developing in Java.
+Vim was the first editor I ever used to write code. The first lines of code I wrote were written with Vim. I kept using it several years in college. I dropped it when I started developing in Java.
 
-  After a short time with <a href="http://www.oracle.com/technetwork/developer-tools/jdev/overview/index.html">Oracle JDeveloper</a> and several years with <a href="http://www.eclipse.org/">Eclipse</a> I've returned to my origins.
+After a short time with [Oracle JDeveloper](http://www.oracle.com/technetwork/developer-tools/jdev/overview/index.html) and several years with [Eclipse](http://www.eclipse.org/) I've returned to my origins.
 
-  Since I use (and am in love with) Mac OS X, <a href="http://code.google.com/p/macvim/">MacVim</a> is my editor of choice. (Could have used Vim on my terminal I just like MacVim better).
+Since I use (and am in love with) Mac OS X, [MacVim](http://code.google.com/p/macvim/) is my editor of choice. (Could have used Vim on my terminal I just like MacVim better).
 
-  Lately <a href="http://www.twitter.com/#!/plagelao">@plagelao</a> has been <a href="http://plagelao.blogspot.com/search/label/vim">sharing his Vim configuration</a>. Following his example I want to start sharing mine too.
+Lately [@plagelao](http://www.twitter.com/plagelao) has been [sharing his Vim configuration](http://plagelao.blogspot.com/search/label/vim). Following his example I want to start sharing mine too.
 
-  Since I know a few people that are starting to use Vim I want to share a couple of key remaps that <a href="http://www.twitter.com/#!/javisantana">@javisantana</a> suggested to help me with my come back to Vim.
+Since I know a few people that are starting to use Vim I want to share a couple of key remaps that [@javisantana](http://www.twitter.com/#!/javisantana) suggested to help me with my come back to Vim.
 
-  The first thing anyone should get used to when starting to use Vim is moving around with `j`, `k`, `h` and `l`. It looks easy, but it's harder than you think.
+The first thing anyone should get used to when starting to use Vim is moving around with `j`, `k`, `h` and `l`. It looks easy, but it's harder than you think.
 
-  To avoid using arrows, just **disable them!**
+To avoid using arrows, just **disable them!**
 
-      "Disable arrows
-      map   <up>    <nop>
-      map   <down>  <nop>
-      map   <left>  <nop>
-      map   <right> <nop>
-      imap  <up>    <nop>
-      imap  <down>  <nop>
-      imap  <left>  <nop>
-      imap  <right> <nop>
+    "Disable arrows
+    map   <up>    <nop>
+    map   <down>  <nop>
+    map   <left>  <nop>
+    map   <right> <nop>
+    imap  <up>    <nop>
+    imap  <down>  <nop>
+    imap  <left>  <nop>
+    imap  <right> <nop>
 
-  This way you will be forced to use **the right keys** to move around.
-
+This way you will be forced to use **the right keys** to move around.

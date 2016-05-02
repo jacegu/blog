@@ -2,7 +2,7 @@
 -@description = 'Where I record the things I learn and share them with you. This is also the place where I keep my long road logbook.'
 
 %section#blog
-  -@blog.each_published_post do |post|
+  -@posts.each do |post|
     %article
       %h1.title
         %a{href: url_for(post)}= post.title

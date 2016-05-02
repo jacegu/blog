@@ -1,12 +1,9 @@
 require "./web/site"
-require "./lib/post_dir"
 
 require "compass"
 require "sprockets"
 require "sprockets-sass"
 require "susy"
-
-Blog.load_posts_from PostDir.at('_posts')
 
 BlogWebsite.configure(:production) do
   Sprockets::Sass.options[:style] = :compressed
