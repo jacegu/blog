@@ -4,8 +4,8 @@ module Mog
       @post_repository = post_repository
     end
 
-    def get_post(post_slug)
-      list_published_posts.find(&by_slug(post_slug)) or raise Errors::PostNotFound
+    def get_post(post_permalink)
+      list_published_posts.find(&by_permalink(post_permalink)) or raise Errors::PostNotFound
     end
 
     def list_published_posts
@@ -18,8 +18,8 @@ module Mog
 
     private
 
-    def by_slug(slug)
-      -> (post) { post.slug == slug }
+    def by_permalink(permalink)
+      -> (post) { post.permalink == permalink }
     end
 
     def by_date_desc

@@ -2,7 +2,7 @@ require 'date'
 
 module Mog
   class Post
-    attr_reader :title, :lang, :date, :description, :content
+    attr_reader :title, :lang, :date, :description, :content, :permalink
 
     def initialize(title: "", lang: "", date: nil, description: "", content: "")
       @title       = title
@@ -10,10 +10,7 @@ module Mog
       @date        = to_date(date)
       @description = description
       @content     = content
-    end
-
-    def slug
-      @slug ||= generate_slug
+      @permalink   = generate_permalink(title)
     end
 
     def published?
@@ -21,12 +18,7 @@ module Mog
     end
 
     def ==(other)
-      other.is_a?(Mog::Post) &&
-        title == other.title &&
-        lang == other.lang &&
-        date == other.date &&
-        description == other.description &&
-        content == other.content
+      other.is_a?(Mog::Post) && title == other.title
     end
 
     private
@@ -39,10 +31,9 @@ module Mog
       end
     end
 
-    def generate_slug
-      slug = title.downcase
-      slug_chunks = slug.split.map{ |chunk| chunk.gsub(/\W|_/, '') }
-      slug_chunks.join('-')
+    def generate_permalink(text)
+      permalink_chunks = text.downcase.split.map { |chunk| chunk.gsub(/\W|_/, '') }
+      permalink_chunks.join('-')
     end
 
   end

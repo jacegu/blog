@@ -70,7 +70,7 @@ RSpec.describe "A Mog blog" do
     include_examples "when there are no posts"
   end
 
-  describe "Getting a post by slug" do
+  describe "Getting a post by permalink" do
     it "returns the post" do
       post = blog.get_post("post-a")
 

@@ -13,13 +13,12 @@ class BlogWebsite < Sinatra::Base
       "#{Date::ABBR_MONTHNAMES[post.date.month]} #{post.date.day}, #{post.date.year}"
     end
 
-    RFC822_FORMAT = "%a, %d %b %Y %T %z"
     def date_to_rfc822(post)
-      post.date.strftime(RFC822_FORMAT)
+      post.date.strftime("%a, %d %b %Y %T %z")
     end
 
     def url_for(post)
-      url("/blog/#{post.slug}")
+      url("/blog/#{post.permalink}")
     end
   end
 
@@ -38,8 +37,8 @@ class BlogWebsite < Sinatra::Base
     haml :'rss.xml', layout: false
   end
 
-  get '/blog/:post_slug' do
-    @post = Mog.blog.get_post(params[:post_slug])
+  get '/blog/:post_permalink' do
+    @post = Mog.blog.get_post(params[:post_permalink])
     haml :post
   end
 
