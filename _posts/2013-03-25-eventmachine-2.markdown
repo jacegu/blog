@@ -3,6 +3,8 @@ en
 2013-03-25
 Writing evented code has implications that may not be explicit at first look. There are 3 aspects that will be affected: flow, program structure and testing.
 
+---
+
 This blog post is an extract of an ebook about EventMachine that I started
 writing some time ago. Somehow it ended up half written in some dark corner
 of my hard drive. I have decided to publish the material I have as series of
