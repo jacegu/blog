@@ -34,6 +34,7 @@ class BlogWebsite < Sinatra::Base
 
   get '/blog/rss' do
     @posts = Mog.blog.list_published_posts
+    content_type "application/rss+xml"
     haml :'rss.xml', layout: false
   end
 
