@@ -25,6 +25,7 @@ GEM
     haml (4.0.6)
       tilt
     hike (1.2.3)
+    maruku (0.7.2)
     multi_json (1.10.1)
     puma (3.4.0)
     puma (3.4.0-java)
@@ -35,7 +36,6 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    redcarpet (3.3.3)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -81,9 +81,9 @@ DEPENDENCIES
   compass (~> 1.0.0)
   foreman (~> 0.81.0)
   haml (~> 4.0.0)
+  maruku (~> 0.7.2)
   puma (~> 3.4.0)
   rake (~> 11.1.0)
-  redcarpet (~> 3.3.0)
   rspec
   sass (~> 3.4.0)
   sinatra (~> 1.4.0)

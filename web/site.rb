@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sass'
-require 'redcarpet'
+require 'maruku'
 require_relative '../lib/mog'
 
 class BlogWebsite < Sinatra::Base

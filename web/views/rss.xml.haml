@@ -24,7 +24,5 @@
         %pubDate #{date_to_rfc822(post)}
         %guid(isPermaLink='true') #{url_for(post)}
         %content:encoded
-          -markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-          <![CDATA[
-          = markdown.render(post.content)
-          ]]>
+          :cdata
+            =Maruku.new(post.content).to_html
