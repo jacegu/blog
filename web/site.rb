@@ -34,7 +34,7 @@ class BlogWebsite < Sinatra::Base
 
   get '/blog/rss' do
     @posts = Mog.blog.list_published_posts
-    content_type "application/rss+xml"
+    content_type "application/rss+xml", charset: "utf-8"
     haml :'rss.xml', layout: false
   end
 
@@ -52,6 +52,7 @@ class BlogWebsite < Sinatra::Base
   end
 
   get '/sitemap.xml' do
+    content_type "application/xml", charset: "utf-8"
     haml :'sitemap.xml', :layout => false
   end
 
