@@ -1,9 +1,23 @@
 #blog hr
   width: 60%
   margin: 0 auto
-  background: darken($background, 4%)
+  background: darken($background, 10%)
   height: 1px
   border: 0
+  &:nth-last-child(2)
+    display: none
+
+#blog .separator
+  display: block
+  position: relative
+  top: -17px
+  width: 40px
+  margin: 0 auto
+  text-align: center
+  color: darken($background, 12%)
+  background: $background
+  font-family: 'Playfair Display'
+  font-size: 30px
   &:last-child
     display: none
 
@@ -17,7 +31,6 @@
     font-family: $sans
     font-style: italic
     text-align: center
-    color:red
   .date
     @include adjust-font-size-to(20px)
     font-style: italic
@@ -30,3 +43,4 @@
     text-align: justify
   .read-more
     font-style: italic
+
