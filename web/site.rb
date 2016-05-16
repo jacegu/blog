@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'haml'
 require 'sass'
 require 'maruku'
 require_relative '../lib/mog'
